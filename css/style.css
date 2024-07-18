@@ -1,0 +1,438 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+*{
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: .2s linear;
+}
+
+:root{
+  --main:#FED8B1;
+  --bg:#6F4E37;
+  --black:#A67B5B;
+  --border:0.5rem solid rgba(255,255,255,.3);
+}
+
+html{
+  font-size: 70%;
+  overflow-x: hidden;
+  scroll-padding-top: 9rem;
+  scroll-behavior: smooth;
+  scrollbar-width: .8rem;
+  scrollbar-color: var(--bg);
+}
+
+html::-webkit-scrollbar-thumb{
+  background: white;
+  border-radius: 5rem;
+}
+
+body{
+  background: var(--bg);
+}
+
+.header {
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 5%;
+  border-bottom: var(--border);
+  position: fixed;
+  top: 0;left: 0;right: 0;
+  z-index: 100;
+}
+
+.header .logo img{
+  height: 5rem;
+  margin-left: 2rem;
+}
+
+.header .navbar a {
+  color: white;
+  margin:0 1rem;
+  font-size: 1.4rem;
+}
+
+.header .navbar a:hover {
+  border-bottom: .15rem solid var(--main);
+  color: var(--main);
+  padding-bottom: .4rem;
+}
+
+.header .icons i{
+  color: white;
+  cursor: pointer;
+  font-size: 2rem;
+  margin-left: 2rem;
+}
+
+.header .icons{
+  display: none;
+}
+/* header-section ends */
+
+
+/* home section starts */
+.home{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: url(../images/home-background.jpg) no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.btn {
+  margin-top: 1rem;
+  display: inline-block;
+  border: 2px solid var(--bg);
+  border-radius: 3rem;
+  color:#eee;
+  font-size: 1.7rem;
+  padding: .9rem 3rem;
+  transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+}
+
+.btn:hover {
+  box-shadow: 0 0 40px 40px var(--bg) inset;
+}
+
+.heading {
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  padding-bottom: 0.5rem;
+  font-size: 3rem;
+}
+
+.heading span {
+  color: var(--main);
+  text-transform: uppercase;
+}
+
+.caption{
+  text-align: center;
+  color: #fff;
+}
+
+section {
+  padding: 2rem 7%;
+}
+
+/* .about-img {
+  width: 50%;
+} */
+
+.home .content {
+  max-width: 60rem;
+}
+
+.home .content h3 {
+  font-size: 6rem;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.home .content p {
+  font-size: 1rem;
+  font-weight: lighter;
+  line-height: 1.8;
+  padding: 1rem 0;
+  color: #eee;
+}
+
+.about .row {
+  display: flex;
+  align-items: center;
+  background: var(--black);
+  flex-wrap: wrap;
+  height: 626px;
+}
+
+.about .row .image {
+  flex-wrap: 1 1 10rem;
+  /* padding: 2rem; */
+}
+
+.about .row .image img {
+  width: 100%;
+}
+
+.about .row .content {
+  flex: 1 1 10rem;
+  padding: 2rem;
+}
+
+.about .row .content h3 {
+  font-size: 3rem;
+  color: #fff;
+}
+
+.about .row .content p {
+  font-size: 1.3rem;
+  color: #ccc;
+  padding: 1rem 0;
+  line-height: 1.4;
+}
+
+.slogan{
+  padding: 10px;
+  text-align: center;
+}
+
+.slogan .title{
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 3rem;
+  margin-bottom: 5px;
+}
+
+.slogan-container{
+  margin-top: 20px;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 1.5rem;
+
+}
+
+.slogan-box{
+  color: #fff;
+  padding: 10px 25px;
+  text-align: center;
+  border: solid 2px var(--main);
+}
+
+.slogan-title{
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.btncarts{
+  background-color: #ccc;
+  color: red;
+  padding: 8px 28px;
+  cursor: pointer;
+
+  margin-left: -80px;
+  margin-top: 10px;
+
+  position: relative;
+}
+
+.icons{
+    color: black;
+    
+    position: absolute;
+    right: 3px;
+    top: 8px;
+}
+
+.menu{
+  margin-top: 20px;
+}
+
+.menu .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 1.5rem;
+}
+
+.menu .box-container .box {
+  padding: 5px;
+  text-align: center;
+}
+
+
+.menu .box-container .box h3 {
+  color: #999;
+  font-size: 2rem;
+  padding: 1rem;
+  padding-bottom: 0;
+}
+
+.menu .box-container .box .price {
+  color: yellowgreen;
+  font-size: 1.4rem;
+  padding: 7px;
+}
+
+.menu .box-container .box .madeby{
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+
+.review .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 1.5rem;
+}
+
+.review .box-container .box {
+  border: var(--main);
+  text-align: center;
+  padding: 3rem 2rem;
+  border: 1px solid #fff;
+}
+
+.review .box-container .box p {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  color: #ccc;
+  padding: 2rem 0;
+}
+
+.review .box-container .box img{
+  height: 5rem;
+  width: 5rem;
+}
+
+.review .box-container .box h3{
+  padding: 1rem 0;
+  font-size: 2rem;
+  color: #fff;
+}
+
+.contact .row {
+  display: flex;
+  align-items: center;
+  background: var(--black);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.contact .row .map {
+  flex: 1 1 20rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+.contact .row .info {
+  flex: 1 1 20rem;
+}
+
+.contact .row .info p {
+  font-size: 2rem;
+  color: #fff;
+  line-height: 1.4;
+}
+
+.contact .row .info .email{
+  text-transform: none;
+}
+
+.contact .row .info i{
+  height: 4rem;
+  width: 4rem;
+  /* line-height: 4rem; */
+  font-size: 2rem;
+  padding: 1rem;
+  margin: .3rem;
+  border: 1px solid #fff;
+  border-radius: 20%;
+}
+
+.contact .row .info i:hover{
+  cursor: pointer;
+  background-color: var(--main);
+}
+
+.footer {
+  margin-top: 2rem;
+  text-align: center;
+  background-color: var(--main);
+}
+
+.footer .credit {
+  font-size: 1.4rem;
+}
+
+
+
+
+
+
+
+
+/* media-queries */
+@media(max-width:990px){
+
+ html{
+    font-size: 58%;
+ }
+
+ .header {
+    padding: 1.5rem 2rem;
+ }
+
+ .header .icons {
+  display:inline-block;
+ }
+
+ .header .navbar{
+  position: fixed;
+  top: 100%;
+  right: -100%;
+  background:white;
+  width: 30rem;
+  height: auto;
+ }
+
+ .header .active {
+  right: 0;
+ }
+
+ .header .navbar a{
+  color: var(--black);
+  display: block;
+  margin: 1.5rem;
+  padding: .5rem;
+  font-size: 2rem;
+ }
+
+ section {
+  padding: 2rem;
+ }
+
+ .home {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  text-align: center;
+
+  position: relative;
+
+  transition: background 2s linear;
+ }
+
+ 
+
+ .home .content h3 {
+  font-size: 4.5rem;
+ }
+
+ .home .content p {
+  font-size: 1.5rem;
+ }
+
+ .about .row {
+  height: auto;
+ }
+
+ .contact .row .info {
+  padding: 2rem;
+ }
+
+ .contact .row .info i{
+  margin-top: 1rem;
+ }
+}
