@@ -44,53 +44,55 @@ window.onscroll = () => {
 }
 
 
+
+
 // const getcoffeedatas = fetch("https://fake-coffee-api.vercel.app/api")
 //   .then((res) => res.json())
 //   .then((data) => data);
 
-var url = "https://fake-coffee-api.vercel.app/api";
+// var url = "https://fake-coffee-api.vercel.app/api";
 
 
-fetch(url)
-        .then(response=>response.json())
-        .then(datas=>{
-                coffeedatatodom(datas);
-            }).
-            catch(err=>console.log(err));
+// fetch(url)
+//         .then(response=>response.json())
+//         .then(datas=>{
+//                 coffeedatatodom(datas);
+//             }).
+//             catch(err=>console.log(err));
     
-function redirectToCart(){
-  window.location.href = "addtocart.php";
-}
+// function redirectToCart(){
+//   window.location.href = "addtocart.php";
+// }
 
-function coffeedatatodom(coffees) {
+// function coffeedatatodom(coffees) {
 
-  let count = 0;
+//   let count = 0;
 
-coffees.forEach(function(coffee) {
-    if (count >= 6) return; // Exit the function if count reaches 12
+// coffees.forEach(function(coffee) {
+//     if (count >= 6) return; // Exit the function if count reaches 12
     
-    var getcoffeestring = JSON.stringify(coffee);
-    var coffeeObject = JSON.parse(getcoffeestring);
+//     var getcoffeestring = JSON.stringify(coffee);
+//     var coffeeObject = JSON.parse(getcoffeestring);
     
-    var lis = document.createElement('li');
-    lis.classList.add('box');
-    console.log(coffeeObject);
-    // Access the properties directly from the parsed object
-    lis.innerHTML = `
-      <img src="${coffeeObject.image_url}" width="400px" height="200px" />
-      <h3>${coffeeObject.name}</h3>
-      <p>Price <span class="price"> ${Math.round(coffeeObject.price * 200)} mmk</span></p>
-      <p>Made by <span class="madeby">${coffeeObject.region}</span></p>
-      <button type="button" class="btncarts" onclick="redirectToCart()">Add to cart <i class="fas fa-trash-alt icons"></i></button>
-    `;
+//     var lis = document.createElement('li');
+//     lis.classList.add('box');
+//     console.log(coffeeObject);
+//     // Access the properties directly from the parsed object
+//     lis.innerHTML = `
+//       <img src="${coffeeObject.image_url}" width="400px" height="200px" />
+//       <h3>${coffeeObject.name}</h3>
+//       <p>Price <span class="price"> ${Math.round(coffeeObject.price * 200)} mmk</span></p>
+//       <p>Made by <span class="madeby">${coffeeObject.region}</span></p>
+//       <button type="button" class="btncarts" onclick="redirectToCart()">Add to cart <i class="fas fa-trash-alt icons"></i></button>
+//     `;
     
-    document.querySelector('.box-container').appendChild(lis);
+//     document.querySelector('.box-container').appendChild(lis);
     
-    count++; // Increment the counter
-
-    
-});
-
+//     count++; // Increment the counter
 
     
-}
+// });
+
+
+    
+// }

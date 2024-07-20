@@ -112,15 +112,13 @@ body{
   font-size: 3rem;
 }
 
-.heading span {
-  color: var(--main);
-  text-transform: uppercase;
-}
 
 .caption{
   text-align: center;
-  color: #fff;
+  color: #999;
+
 }
+
 
 section {
   padding: 2rem 7%;

@@ -22,7 +22,8 @@
 
   <nav class="navbar">
     <a href="#home">Home</a>
-    <a href="#items">Items</a>
+    <a href="#menu">Menu</a>
+    <a href="#products">Products</a>
     <a href="#about">About</a>
     <a href="#review">Review</a>
     <a href="#contact">Contact</a>
@@ -70,42 +71,16 @@
 
   </div>
 </section>
-<!-- menu section starts -->
-<section class="menu" id="items">
 
-  <h1 class="heading">Explore the recent products<span></span></h1>
-  <p class="caption">For more products , click add-to-cart to search</p>  
+<!-- menu section starts -->
+<section class="menu" id="menu">
+
+  <h1 class="heading">Our Items<h1>
+  <p class="caption">For more products , Check out our menu</p>  
   <div class="box-container">
-    <!-- <div class="box">
-      <img src="images/menu-1.png" alt="">
-      <h3>tasty and healthy</h3>
-      <div class="price">$10.8 <span>23.99</span></div>
+    <div class="box">
+         <img src="./assets/img" alt="" />
     </div>
-    <div class="box">
-      <img src="images/menu-2.png" alt="">
-      <h3>tasty and healthy</h3>
-      <div class="price">$10.8 <span>23.99</span></div>
-    </div> 
-    <div class="box">
-      <img src="images/menu-3.png" alt="">
-      <h3>tasty and healthy</h3>
-      <div class="price">$10.8 <span>23.99</span></div>
-    </div> 
-    <div class="box">
-      <img src="images/menu-4.png" alt="">
-      <h3>tasty and healthy</h3>
-      <div class="price">$10.8 <span>23.99</span></div>
-    </div> 
-    <div class="box">
-      <img src="images/menu-5.png" alt="">
-      <h3>tasty and healthy</h3>
-      <div class="price">$10.8 <span>23.99</span></div>
-    </div> 
-    <div class="box">
-      <img src="images/menu-6.png" alt="">
-      <h3>tasty and healthy</h3>
-      <div class="price">$10.8 <span>23.99</span></div>
-    </div> -->
   </div>
 </section>
 
@@ -116,7 +91,7 @@
 <section class="about" id="about">
   <h1 class="heading"> <span>about</span> us </h1>
 
-  <div class="row">
+  <div class="row ">
       <div class="image">
         <img src="images/about.jpg" alt="" class="about-img">
       </div>
