@@ -104,20 +104,7 @@ body{
   box-shadow: 0 0 40px 40px var(--bg) inset;
 }
 
-.heading {
-  text-align: center;
-  color: #fff;
-  text-transform: uppercase;
-  padding-bottom: 0.5rem;
-  font-size: 3rem;
-}
 
-
-.caption{
-  text-align: center;
-  color: #999;
-
-}
 
 
 section {
@@ -233,39 +220,95 @@ section {
     top: 8px;
 }
 
+/* Menu Section starts */
+
 .menu{
   margin-top: 20px;
+  font-family: sans-serif;  
+}
+
+
+.heading {
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  padding-bottom: 0.5rem;
+  font-size: 3rem;
+}
+
+
+.caption{
+  text-align: center;
+  color: #999;
+
 }
 
 .menu .box-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   gap: 1.5rem;
+
+  margin-top: 20px;
+  padding: 10px;
 }
 
 .menu .box-container .box {
-  padding: 5px;
+  padding: 10px;
   text-align: center;
+  margin: 9px 10px;
+  box-shadow: 0 1px 0 1px rgba(255,255,255,0.05);
+
+  transition: all 1s;
 }
 
+.menu .box-container .box:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 1px 0 1px rgba(255,255,255,0.6);
 
-.menu .box-container .box h3 {
-  color: #999;
-  font-size: 2rem;
-  padding: 1rem;
-  padding-bottom: 0;
 }
 
-.menu .box-container .box .price {
-  color: yellowgreen;
-  font-size: 1.4rem;
-  padding: 7px;
+.box-container .box img{
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
 }
 
-.menu .box-container .box .madeby{
+.box .menu-content{
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.menu-content h3{
+   color: peru;
+   font-size: 20px;
+   text-transform: uppercase;
+   margin-bottom: 10px;
+}
+
+.menu-content p{
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 14px;
+  word-spacing: 1px;
+  letter-spacing: 1px;
+
+  margin-bottom: 20px;
 }
+
+.menu-content a{
+  width: 350px;
+  height: 150px;
+  background-color: burlywood;
+  color: #fff;
+
+  padding: 10px 40px;
+}
+
+.menu-content a:hover{
+  background-color: #fff;
+  color: #000;
+}
+/* Menu Section ends */
+
 
 
 .review .box-container {

@@ -79,7 +79,57 @@
   <p class="caption">For more products , Check out our menu</p>  
   <div class="box-container">
     <div class="box">
-         <img src="./assets/img/menu/" alt="" />
+         <img src="./assets/img/menu/coffee1.jpeg" alt="" />
+         <div class="menu-content">
+            <h3>Coffee</h3>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+            <a href="menu.php">More</a>
+         </div>
+    </div>
+
+    <div class="box">
+         <img src="./assets/img/menu/coffee2.jpg" alt="" />
+         <div class="menu-content">
+            <h3>Coffee</h3>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+            <a href="menu.php">More</a>
+         </div>
+    </div>
+
+    <div class="box">
+         <img src="./assets/img/menu/coffee3.jpeg" alt="" />
+         <div class="menu-content">
+            <h3>Coffee</h3>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+            <a href="menu.php">More</a>
+         </div>
+    </div>
+
+    <div class="box">
+         <img src="./assets/img/menu/cake1.jpg" alt="" />
+         <div class="menu-content">
+            <h3>Cake</h3>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+            <a href="menu.php">More</a>
+         </div>
+    </div>
+
+    <div class="box">
+         <img src="./assets/img/menu/cake2.jpg" alt="" />
+         <div class="menu-content">
+            <h3>Cake</h3>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+            <a href="menu.php">More</a>
+         </div>
+    </div>
+
+    <div class="box">
+         <img src="./assets/img/menu/cake3.jpeg" alt="" />
+         <div class="menu-content">
+            <h3>Cake</h3>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+            <a href="menu.php">More</a>
+         </div>
     </div>
   </div>
 </section>
