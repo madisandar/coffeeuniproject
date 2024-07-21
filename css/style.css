@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Protest+Riot&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
 *{
   font-family: "Roboto", sans-serif;
@@ -37,45 +37,108 @@ body{
   background: var(--bg);
 }
 
+.bg {
+  background: url(../assets/img/banner/bg.jpeg) no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 100%/0 0 10% 10%;
+}
+
 .header {
-  background: var(--bg);
+  /* background: var(--bg); */
+  background-color: transparent;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 5%;
-  border-bottom: var(--border);
+  padding: 0.2rem 5%;
+  /* border-bottom: var(--border); */
   position: fixed;
   top: 0;left: 0;right: 0;
   z-index: 100;
 }
 
+#header.scrolled {
+  background-color: #e0ac4c; /* Change to desired color */
+}
+
+/* .header .active {
+  display: inline-block;
+} */
+
 .header .logo img{
-  height: 5rem;
+  height: 9rem;
   margin-left: 2rem;
 }
 
+.header .logo img:hover{
+  transform: scale(1.1);
+}
+
+.header .navbar {
+  margin-left: 3rem;
+}
+
 .header .navbar a {
-  color: white;
-  margin:0 1rem;
-  font-size: 1.4rem;
+  color: #58402F;
+  margin-left: 4rem;
+  font-size: 1.5rem;
 }
 
 .header .navbar a:hover {
   border-bottom: .15rem solid var(--main);
-  color: var(--main);
+  color: #623F2A;
   padding-bottom: .4rem;
 }
 
+.header .icons {
+  /* display: inline-block; */
+  font-size: 1.8rem;
+  margin-left: 1rem;
+  margin-top: 3.2rem;
+  margin-right: 2rem;
+}
 .header .icons i{
   color: white;
   cursor: pointer;
-  font-size: 2rem;
-  margin-left: 2rem;
 }
 
-.header .icons{
+.header .icons .search-btn {
+  margin-right: 1rem;
+}
+
+.header .icons .search-btn:hover {
+  transform: scale(1.13);
+}
+
+.header .icons .cart-btn:hover {
+  transform: scale(1.13);
+}
+
+.header .icons .menu-btn{
   display: none;
 }
+
+.header .search-form {
+  margin-right: 3rem;
+  background-color: #fff;
+  width: 16rem;
+  height: 2rem;
+  /* display: none; */
+}
+
+.header .search-form input {
+  width: 100%;
+  height: 100%;
+  font-size: 1rem;
+  color: var(--black);
+  padding: 1rem;
+  text-transform: none;
+}
+
+input[type=search]:focus {
+  border: 1px solid #555;
+}
+
 /* header-section ends */
 
 
@@ -84,9 +147,20 @@ body{
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background: url(../images/home-background.jpg) no-repeat;
-  background-position: center;
-  background-size: cover;
+  /* background: url(../images/home-background.jpg) no-repeat; */
+  /* background-position: center; */
+  /* background-size: cover; */
+}
+
+.home .img {
+  margin-top: 4rem;
+  margin-left: 10rem;
+}
+.home .img img{
+  width: 85%;
+}
+.home .img img:hover {
+  transform: scale(1.1); 
 }
 
 .btn {
@@ -94,18 +168,16 @@ body{
   display: inline-block;
   border: 2px solid var(--bg);
   border-radius: 3rem;
-  color:#eee;
+  color: var(--bg);
   font-size: 1.7rem;
   padding: .9rem 3rem;
   transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
 }
 
 .btn:hover {
+  color: #eee;
   box-shadow: 0 0 40px 40px var(--bg) inset;
 }
-
-
-
 
 section {
   padding: 2rem 7%;
@@ -114,23 +186,41 @@ section {
 /* .about-img {
   width: 50%;
 } */
+.home span {
+  font-family: "Protest Riot", sans-serif;
+  font-style: normal;
+  text-transform: uppercase;
+  font-weight: 100;
+  color: #623F2A;;
+}
 
 .home .content {
   max-width: 60rem;
 }
 
 .home .content h3 {
+  font-family: "Protest Riot", sans-serif;
   font-size: 6rem;
+  font-weight: 100;
   text-transform: uppercase;
-  color: #fff;
+  color: #d2911c;
+  /* color: var(--bg); */
+}
+
+.home .content hr {
+  width: 35%;
+  height: 0.5rem;
+  border: none;
+  margin: 10px 0;
+  background: linear-gradient(to right, #623F2A, #DEDEDE);
 }
 
 .home .content p {
-  font-size: 1rem;
+  font-size: 1.3rem;
   font-weight: lighter;
   line-height: 1.8;
   padding: 1rem 0;
-  color: #eee;
+  color: #d2911c;
 }
 
 .about .row {
