@@ -256,14 +256,14 @@ section {
   padding: 10px;
   text-align: center;
   margin: 9px 10px;
-  box-shadow: 0 1px 0 1px rgba(255,255,255,0.05);
+  box-shadow: 0 0 0 rgba(255,255,255,0.05);
 
   transition: all 1s;
 }
 
 .menu .box-container .box:hover{
   transform: translateY(-4px);
-  box-shadow: 0 1px 0 1px rgba(255,255,255,0.6);
+  box-shadow: 0 0 0  rgba(255,255,255,0.6);
 
 }
 
@@ -307,6 +307,7 @@ section {
   background-color: #fff;
   color: #000;
 }
+
 /* Menu Section ends */
 
 
