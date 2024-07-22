@@ -6,31 +6,45 @@
   <title>Coffee</title>
 
   <!-- font awesome cdn link -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://kit.fontawesome.com/71aa3b06af.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
   <!-- css file link -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  
+
+
+<div class="bg">
 <!-- header section starts -->
-<header class="header">
+<header class="header" id="header">
   
   <a href="#" class="logo">
-    <img src="images/coffee-logo.png" alt="logo" srcset="">
+    <img src="assets/img/logo/logo.png" alt="logo" srcset="">
   </a>
 
   <nav class="navbar">
-    <a href="#home">Home</a>
-    <a href="#menu">Menu</a>
-    <a href="#products">Products</a>
-    <a href="#about">About</a>
-    <a href="#review">Review</a>
-    <a href="#contact">Contact</a>
+    <a data-aos="fade-in" data-aos-delay="100" href="#home">Home</a>
+    <a data-aos="fade-in" data-aos-delay="200" href="#menu">Menu</a>
+    <a data-aos="fade-in" data-aos-delay="300" href="#products">Products</a>
+    <a data-aos="fade-in" data-aos-delay="400" href="#about">About</a>
+    <a data-aos="fade-in" data-aos-delay="500" href="#review">Review</a>
+    <a data-aos="fade-in" data-aos-delay="600" href="#contact">Contact</a>
   </nav>
 
+  <div class="search-form">
+    <input type="search" name="" id="search-box" placeholder="search here...">
+  </div>
   <div class="icons">
+    <i class="fa-solid fa-magnifying-glass search-btn"></i>
+    <i class="fa-solid fa-cart-shopping cart-btn"></i>
     <i class="fa-solid fa-bars menu-btn"></i>
   </div>
+
 </header>
 <!-- header section ends -->
 
@@ -38,13 +52,19 @@
 
 <section class="home" id="home">
   <div class="content">
-    <h3>Coffee in the morning</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque magnam corrupti illum, voluptate numquam cupiditate sint at veritatis adipisci quasi. Ut labore repellendus beatae explicabo aliquam, voluptates cupiditate debitis nostrum.</p>
-    <a href="">get yours now</a>
+    <h3 data-aos="fade-in"><span>Coffee</span> in the morning</h3>
+    <hr data-aos="fade-left" >
+    <p data-aos="fade-up">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque magnam corrupti illum, voluptate numquam cupiditate sint at veritatis adipisci quasi. Ut labore repellendus beatae explicabo aliquam, voluptates cupiditate debitis nostrum.</p>
+    <a data-aos="fade-up" data-aos-delay="100" href="" class="btn">get yours now</a>
+  </div>
+  <div class="img" data-aos="fade-down">
+    <img src="assets/img/banner/coffee-cup.png" alt="coffee-cup">
   </div>
 </section>
 
 <!-- home section ends -->
+</div>
+
 <!-- slogan section starts -->
 <section class="slogan">
   <h3 class="title">Coffee Tips</h3>
