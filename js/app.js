@@ -46,6 +46,42 @@ window.addEventListener('scroll', function() {
 });
 
 
+
+document.addEventListener('DOMContentLoaded', () => {
+  const counters = document.querySelectorAll('.number');
+  const speed = 200; // The lower the speed, the faster the count
+
+  const updateCount = (counter) => {
+      const target = +counter.getAttribute('data-target');
+      const count = +counter.innerText;
+      const increment = target / speed;
+
+      if (count < target) {
+          counter.innerText = Math.ceil(count + increment);
+          setTimeout(() => updateCount(counter), 1);
+      } else {
+          counter.innerText = target + "+";
+      }
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+              const counter = entry.target;
+              updateCount(counter);
+              observer.unobserve(counter); // Stop observing after the animation
+          }
+      });
+  }, { threshold: 0.1 });
+
+  counters.forEach(counter => {
+      observer.observe(counter);
+  });
+});
+
+
+
+
 // const getcoffeedatas = fetch("https://fake-coffee-api.vercel.app/api")
 //   .then((res) => res.json())
 //   .then((data) => data);
