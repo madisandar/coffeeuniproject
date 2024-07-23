@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Protest+Riot&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Protest+Riot&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
 *{
   font-family: "Roboto", sans-serif;
@@ -41,7 +41,9 @@ body{
   background: url(../assets/img/banner/bg.jpeg) no-repeat;
   background-position: center;
   background-size: cover;
-  border-radius: 100%/0 0 10% 10%;
+  /* border-radius: 100%/0 0 10% 10%; */
+  border-bottom-left-radius: 70% 3%;
+  border-bottom-right-radius: 70% 3%;
 }
 
 .header {
@@ -223,6 +225,95 @@ section {
   color: #d2911c;
 }
 
+.card {
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  max-width: 600px;
+  padding: 20px;
+  background-color: #D4D4D4;
+  border: 1px solid #FAFAFA;
+  border-radius: 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  left: 375px;
+  bottom: -50px;
+}
+
+.card .section {
+  text-align: center;
+  flex: 1;
+}
+
+.card .section h2 {
+  font-style: normal;
+  font-weight: lighter;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: #623f2a;
+}
+
+.card .section .number {
+  font-size: 2em;
+  font-weight: bold;
+  color: #292828;
+}
+
+.quote-container {
+  display: flex;
+  padding: 0 6%;
+  margin-top: 2rem;
+  position: relative;
+}
+
+.blockquote-wrapper {
+  display: flex;
+  height: auto;
+  padding: 0 20px;
+}
+
+.blockquote {
+   position: relative;
+   font-family: 'Poppins', sans-serif;
+   font-weight: 800;
+   color: #ffffff;
+   padding: 30px 0;
+   width: 100%;
+   max-width: 500px;
+   z-index: 1;
+   margin: 80px auto;
+   align-self: center;
+   border-top: solid 1px;
+   border-bottom: solid 1px;
+}
+
+.blockquote h1 {
+   font-family: "Pacifico", cursive;
+   position: relative;
+   color: #FFFFFF;
+   font-size: 40px;
+   font-weight: 400;
+   line-height: 1;
+   margin: 0;
+   margin-bottom: 1rem;
+}
+
+.blockquote h4 {
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.blockquote:after {
+   position: absolute;
+   content: "“";
+   color: rgba(255, 255, 255, 1);
+   font-size: 10rem;
+   line-height: 0;
+   top: 18px;
+   /* right: 30px; */
+}
+
 .about .row {
   display: flex;
   align-items: center;
@@ -257,39 +348,6 @@ section {
   line-height: 1.4;
 }
 
-.slogan{
-  padding: 10px;
-  text-align: center;
-}
-
-.slogan .title{
-  text-transform: uppercase;
-  color: #fff;
-  font-size: 3rem;
-  margin-bottom: 5px;
-}
-
-.slogan-container{
-  margin-top: 20px;
-  padding: 10px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-  gap: 1.5rem;
-
-}
-
-.slogan-box{
-  color: #fff;
-  padding: 10px 25px;
-  text-align: center;
-  border: solid 2px var(--main);
-}
-
-.slogan-title{
-  font-size: 2rem;
-  margin-bottom: 10px;
-}
-
 .btncarts{
   background-color: #ccc;
   color: red;
@@ -315,6 +373,7 @@ section {
 .menu{
   margin-top: 20px;
   font-family: sans-serif;  
+  background-color: white;
 }
 
 

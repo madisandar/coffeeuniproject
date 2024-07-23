@@ -65,31 +65,51 @@
 <!-- home section ends -->
 </div>
 
-<!-- slogan section starts -->
-<section class="slogan">
-  <h3 class="title">Coffee Tips</h3>
-  <p class="caption">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+<!-- card start -->
+<div class="card">
+        <div class="section">
+            <h2>Coffee</h2>
+            <p class="number" data-target="9">0</p>
+        </div>
+        <div class="section">
+            <h2>Products</h2>
+            <p class="number" data-target="9">0</p>
+        </div>
+        <div class="section">
+            <h2>Customers</h2>
+            <p class="number" data-target="2000">0</p>
+        </div>
+</div>
+<!-- card end -->
 
-  <div class="slogan-container">
-
-
-    <div class="slogan-box">
-      <h3 class="slogan-title">For People with love coffee</h3>
-      <p class="slogan-content">Costa Coffee: “Love for the bean” - This tagline emphasizes Costa's passion for quality coffee beans and the art of coffee making. Peet's Coffee: “The original The best coffee in the city. Survive the weekdays; Wake up to life.</p>
+<!-- quote start -->
+<div class="quote-container">
+  <div class="blockquote-wrapper">
+    <div class="blockquote">
+      <h1>
+      Life is too short for bad coffee
+      </h1>
+      <h4>&mdash;Steven Pressfield</h4>
     </div>
-
-    <div class="slogan-box">
-      <h3 class="slogan-title">Coffe with examples</h3>
-      <p class="slogan-content">Home of the world's finest coffees. Live now, Sleep Tomorrow; Your cup of inspiration. Everyone Deserves the COffee Time; Remolding Your Dreams; Only Coffee .</p>
-    </div>
-
-    <div class="slogan-box">
-      <h3 class="slogan-title">Every coffee helps</h3>
-      <p class="slogan-content">Coffee slogans can be an effective way to capture the attention of potential customers and create a memorable brand image for your coffee business. A catchy ...</p>
-    </div>
-
   </div>
-</section>
+  <div class="blockquote-wrapper">
+    <div class="blockquote">
+      <h1>
+      Life begins after coffee
+      </h1>
+      <h4>&mdash;Louisa May Alcott</h4>
+    </div>
+  </div>
+  <div class="blockquote-wrapper">
+    <div class="blockquote">
+      <h1>
+      Coffee is a hug in a mug
+      </h1>
+      <h4>&mdash;Howard Schultz</h4>
+    </div>
+  </div>
+</div>
+<!-- quote end -->
 
 <!-- menu section starts -->
 <section class="menu" id="menu">
