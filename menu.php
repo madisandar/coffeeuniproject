@@ -17,7 +17,7 @@
             padding: 10px;
         }
         .menu-container{
-            width: 1300px;
+            width: auto;
             padding: 20px;
             text-align: center;
         }
@@ -94,26 +94,7 @@
             display: none;
         }
 
-
-        .menu-boxs-container .menu-boxs {
-            padding: 30px 20px;
-            text-align: left;
-            margin: 9px 10px;
-            box-shadow: 0 0 0 rgba(255,255,255,0.8);
-            border: 1px solid rgb(255,255,255,0.1);
-
-            transition: all 1s;
-            
-        }
-
-
-
-        .menu-boxs img{
-            width: 200px;
-            height: 120px;
-            object-fit: cover;
-        }
-
+      
         .menu-contents{
             margin-top: 10px;
         }
@@ -149,6 +130,40 @@
             gap: 1.5rem;
         }
 
+        .menu-boxs{
+            width: 90%;
+            height: 400px;
+
+            /* border: 1px solid #999; */
+            box-shadow: 1px 1px 1px 1px rgb(0,0,0,0.1);
+
+            margin: 10px;
+            padding: 10px 20px;
+
+            text-align: left;
+            transition: opacity 0.1 s ease;
+
+
+        }
+
+        .menu-boxs img{
+            width: 100%;
+            height: 60%;
+            cursor: pointer;
+        }
+
+        .menu-container:hover .menu-boxs {
+            opacity: 0.3;
+        }
+
+        .menu-boxs:hover{
+            opacity: 1 !important;;
+        }
+
+
+      
+
+                
 
 
         .cake-boxes,.coffee-boxs{
@@ -309,6 +324,8 @@
 
 
         </div>
+
+        <div id="overlay"></div>
 
         <div class="coffee-container">
             
@@ -482,9 +499,33 @@
 
 
 
+         var overlay = document.getElementById('overlay');
+          var getallmenuboxes = document.querySelectorAll('.menu-boxs');
+          getallmenuboxes.forEach(function(singlemenubox){
+             singlemenubox.addEventListener('click',function(e){
+                const style = window.getComputedStyle(e.target);
+                console.log(e.target);
+                if (style.opacity === '1') {
+                    
+                } else {
+                    console.log('Opacity is not 1');
+                    overlay.innerHTML = `
 
+            <div class="menu-boxs">
+                <img src="./assets/img/menu/set6.jpeg" alt="" />
+                <div class="menu-contents">
+                    <h3>Name : Set6</h3>
+                    <p>Price : <span>9500</span>MMK</p>
+                    <p>Coffee Sweety Hub</p>
 
-
+                    <p class="read-more-btn">Read More <i class="fas fa-arrow-right"></i></p>
+                    <p class="hidden">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    
+                </div>
+            </div>`;
+                }
+            });
+          })
           
 
 </script>

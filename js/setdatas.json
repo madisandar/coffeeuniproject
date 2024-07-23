@@ -1,0 +1,59 @@
+{
+    "sets": [
+      {
+        "name": "Set1",
+        "text": "Lorem Ipsum is simply dummy text",
+        "price": "4000MMK",
+        "url": "./assets/img/banner/bannercoffee1.jpg"
+      },
+      {
+        "name": "Set2",
+        "text": "Lorem Ipsum is simply dummy text",
+        "price": "4000MMK",
+        "url": "./assets/img/banner/bannercoffee1.jpg"
+      },
+      {
+        "name": "Set3",
+        "text": "Lorem Ipsum is simply dummy text",
+        "price": "4000MMK",
+        "url": "./assets/img/banner/bannercoffee1.jpg"
+      },
+      {
+        "name": "Set4",
+        "text": "Lorem Ipsum is simply dummy text",
+        "price": "4000MMK",
+        "url": "./assets/img/banner/bannercoffee1.jpg"
+      },
+      {
+        "name": "Set5",
+        "text": "Lorem Ipsum is simply dummy text",
+        "price": "4000MMK",
+        "url": "./assets/img/banner/bannercoffee1.jpg"
+      },
+      {
+        "name": "Set6",
+        "text": "Lorem Ipsum is simply dummy text",
+        "price": "4000MMK",
+        "url": "./assets/img/banner/bannercoffee1.jpg"
+      },
+      {
+        "name": "Set7",
+        "text": "Lorem Ipsum is simply dummy text",
+        "price": "4000MMK",
+        "url": "./assets/img/banner/bannercoffee1.jpg"
+      },
+      {
+        "name": "Set8",
+        "text": "Lorem Ipsum is simply dummy text",
+        "price": "4000MMK",
+        "url": "./assets/img/banner/bannercoffee1.jpg"
+      },
+      {
+        "name": "Set9",
+        "text": "Lorem Ipsum is simply dummy text",
+        "price": "4000MMK",
+        "url": "./assets/img/banner/bannercoffee1.jpg"
+      }
+    ]
+  }
+  

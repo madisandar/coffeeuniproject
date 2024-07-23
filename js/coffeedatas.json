@@ -1,0 +1,59 @@
+{
+    "coffeeobjs": [
+      {
+        "name": "Espresso",
+        "text": "Lorem Ipsum is simply dummy text",
+        "price": "4000MMK",
+        "url": "./assets/img/banner/bannercoffee1.jpg"
+      },
+      {
+        "name": "Americano",
+        "text": "Lorem Ipsum is simply dummy text",
+        "price": "3000MMK",
+        "url": "./assets/img/banner/bannercoffee1.jpg"
+      },
+      {
+        "name": "Cappuccino",
+        "text": "Lorem Ipsum is simply dummy text",
+        "price": "5000MMK",
+        "url": "./assets/img/banner/bannercoffee1.jpg"
+      },
+      {
+        "name": "Latte",
+        "text": "Lorem Ipsum is simply dummy text",
+        "price": "4500MMK",
+        "url": "./assets/img/banner/bannercoffee1.jpg"
+      },
+      {
+        "name": "Mocha",
+        "text": "Lorem Ipsum is simply dummy text",
+        "price": "3000MMK",
+        "url": "./assets/img/banner/bannercoffee1.jpg"
+      },
+      {
+        "name": "Ristretto",
+        "text": "Lorem Ipsum is simply dummy text",
+        "price": "3500MMK",
+        "url": "./assets/img/banner/bannercoffee1.jpg"
+      },
+      {
+        "name": "Affogato",
+        "text": "Lorem Ipsum is simply dummy text",
+        "price": "5000MMK",
+        "url": "./assets/img/banner/bannercoffee1.jpg"
+      },
+      {
+        "name": "Macchiato",
+        "text": "Lorem Ipsum is simply dummy text",
+        "price": "3500MMK",
+        "url": "./assets/img/banner/bannercoffee1.jpg"
+      },
+      {
+        "name": "BlackCoffee",
+        "text": "Lorem Ipsum is simply dummy text",
+        "price": "4000MMK",
+        "url": "./assets/img/banner/bannercoffee1.jpg"
+      }
+    ]
+  }
+  
