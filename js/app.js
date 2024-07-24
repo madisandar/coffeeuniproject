@@ -132,3 +132,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     
 // }
+
+var getallboxes = document.querySelectorAll('.menu .box-container .box');
+// console.log(getallboxes);
+var getbox;
+
+
+
+window.onscroll = function(){
+  scrollanimate();
+};
+
+
+function scrollanimate(){
+  var getscrolltop = document.documentElement.scrollTop;
+
+  if(getscrolltop >= 800){
+    getallboxes.forEach(function(getbox){
+      // console.log(getbox);
+        getboxbox.classList.add('fade-in');  
+  });
+  }
+}

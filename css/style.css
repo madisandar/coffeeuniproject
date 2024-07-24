@@ -373,23 +373,25 @@ section {
 .menu{
   margin-top: 20px;
   font-family: sans-serif;  
-  background-color: white;
+  background: linear-gradient(to top, #623F2A, #ddd);
 }
 
 
 .heading {
   text-align: center;
-  color: #fff;
+  color: #d2911c;
   text-transform: uppercase;
   padding-bottom: 0.5rem;
-  font-size: 3rem;
+  font-size: 2.3rem;
+  font-family: arial;
 }
 
 
 .caption{
   text-align: center;
-  color: #999;
-
+  color: #623f2a;
+  font-family: "Pacifico", cursive;
+  font-size:  1.6rem;
 }
 
 .menu .box-container {
@@ -405,15 +407,27 @@ section {
   padding: 10px;
   text-align: center;
   margin: 9px 10px;
-  box-shadow: 0 0 0 rgba(255,255,255,0.05);
+  box-shadow: 0 0 0 rgba(#623f2a,#623f2a,#623f2a,0.5);
 
   transition: all 1s;
 }
 
 .menu .box-container .box:hover{
+  cursor: pointer;
   transform: translateY(-4px);
   box-shadow: 0 0 0  rgba(255,255,255,0.6);
+  animation: fadeIn 3s ease-in-out;
 
+}
+
+.menu .box-container .box.active{
+  animation: fadeIn 2s linear infinite; /* Fade in animation */
+}
+
+@keyframes fadeIn {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% {opacity: 1; }
 }
 
 .box-container .box img{
@@ -435,11 +449,9 @@ section {
 }
 
 .menu-content p{
-  color: #fff;
+  color: #623f2a;
   font-size: 14px;
-  word-spacing: 1px;
-  letter-spacing: 1px;
-
+  font-family: sans-serif;
   margin-bottom: 20px;
 }
 

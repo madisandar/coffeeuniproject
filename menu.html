@@ -6,12 +6,12 @@
     <link href="./css/style.css" rel="stylesheet" type="text/css" />
     <style type="text/css">
         body{
-            background: linear-gradient(to right, #623F2A, #DEDEDE);
+            background: linear-gradient(to right,#623F2A, #000);
         }
         .back-btn{
-            text-decoration: underline;     
             font-size: 1.5rem;
-            color: blue;
+            background: linear-gradient(burlywood,#fff);
+            color: #000;
 
             position: absolute;
             right: 10px;
@@ -25,14 +25,14 @@
             text-align: center;
         }
         .menu-container h5{
-            color: black;
+            color: #ddd;
             font-size: 30px;
             margin-bottom: 10px;
         }
 
         .menu-container p{
             font-size: 15px;
-            color: #fff;
+            color: yellowgreen;
         }
 
         .menu-card{
@@ -51,7 +51,9 @@
             justify-content: space-between;
         }
         .menu-content button{
-            background-color: whitesmoke;
+            background: burlywood;
+           color: #fff;
+
             border-radius: 50%;
             padding: 10px;
             margin-left: 30px;
@@ -62,8 +64,8 @@
         }   
 
         .menu-content button:hover{
-            background-color: #000;
-            color: #fff;
+            background-color: #ccc;
+            color: #000;
         }
         
         .menu-content button:nth-child(1):hover::after{
@@ -93,7 +95,8 @@
         .menu-boxs-container,.cake-container,.coffee-container{
             top: 20px;
             padding: 10px;
-            
+            margin-left: 20px;
+
             display: none;
         }
 
@@ -104,15 +107,23 @@
         
         .menu-contents h3{
             color: burlywood;
-            font-size: 20px;    
+            font-size: 20px;
+            margin: 10px;  
         }
 
         .menu-contents p{
             color: #fff;
+            margin: 13px;
+            font-size: 15px;
         }
 
         .menu-contents span{
             font-size: 25px;
+        }
+
+        .menu-contents .para{
+            font-size: 16;
+            text-align: justify;
         }
         .hidden {
             display: none;
@@ -133,46 +144,78 @@
             gap: 1.5rem;
         }
 
-        .menu-boxs{
-            width: 90%;
-            height: 400px;
-
-            /* border: 1px solid #999; */
-            box-shadow: 1px 1px 1px 1px rgb(0,0,0,0.1);
-
-            margin: 10px;
-            padding: 10px 20px;
-
-            text-align: left;
-            transition: opacity 0.1 s ease;
-
-
-        }
-
-        .menu-boxs img{
-            width: 100%;
-            height: 60%;
-            cursor: pointer;
-        }
-
-        .menu-container:hover .menu-boxs {
-            opacity: 0.3;
-        }
-
-        .menu-boxs:hover{
-            opacity: 1 !important;;
-        }
-
-
-      
-
                 
+            .flip-cards{
+                width: 300px;
+                height: 300px;
+
+                perspective: 1000px;
+                cursor: pointer;
+            }
+
+            .flip-cards:hover{
+                margin-left: 35px;
+            }
+
+
+            .flip-card-inners{
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                box-shadow: 10px 0 10px rgba(0,0,0,0.5);
+
+                transform-style: preserve-3d;
+
+                transform: rotateY(-5deg) scale(0.7);
+
+                transition: transform  0.8s;
+            }
+
+            .flip-cards:hover .flip-card-inners{
+                transform: rotateY(180deg);
+            }
+
+            .flip-card-fronts,.flip-card-backs{
+                width: 100%;
+                height: 100%;
+
+                position: absolute;
+
+                -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+            }
+
+            .flip-card-fronts img{
+                width: 380px;
+                height: 300px;
+
+                transform: rotate(120deg,-45deg);
+
+            } 
+
+            .flip-card-backs{
+                width: 300px;
+                height: 300px;
+                
+                background: linear-gradien(to right,#623F2A, #000);
+                transform: rotateY(180deg);
+                
+            }
+
 
 
         .cake-boxes,.coffee-boxs{
             margin-top: 20px;
+            cursor: pointer;
+            /* box-shadow: 1px 1px 1px rgb(0,0,0,0.2); */
+            border-radius: 30px;
+            padding: 10px;
         }
 
+        .cake-boxes img{
+            border-radius: 30px;
+        }
+        
         .coffees{
             text-align: center;
         }
@@ -227,14 +270,16 @@
     </style>
 </head>
 <body>
+    <!-- header section starts -->
 
-    <a href="index.php" class="back-btn">Back to home</a>
+
+    <a href="index.html" class="back-btn">Back to home</a>
 
  
 
     <div class="menu-container">
         <h5>Menus</h5>
-        <p>Look at our menus</p>
+        <p>Check out menu details by clicking photo</p>
 
         <div class="menu-card">
             <h3>Coffee & Cake</h3>
@@ -248,82 +293,125 @@
 
         <div class="menu-boxs-container active">
 
-            <div class="menu-boxs">
-                <img src="./assets/img/menu/set1.jpg" alt="" />
-                <div class="menu-contents">
-                    <h3>Name : Set1</h3>
-                    <p>Price : <span>8000</span>MMK</p>
-                    <p>Coffee Sweety Hub</p>
-                    <p class="read-more-btn">Read More <i class="fas fa-arrow-right"></i></p>
-                    <p class="hidden">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <!-- <div class="flip-cards">
+                <div class="flip-card-inners">
+
+                    <div class="flip-card-fronts">
+                       <img src="./assets/img/menu/set1.jpg" alt="set1" />
+                    </div>
+                    <div class="flip-card-backs pt-3">
+                        <div class="menu-contents">
+                            <h3>Name : Set1</h3>
+                            <p>Price : <span>9000</span>MMK</p>
+                            <p>Coffee Sweety Hub</p>
+                            <p class="para">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+                            </p>
+                        </div>
+                        
+                    </div>
+
                 </div>
             </div>
 
-            <div class="menu-boxs">
-                <img src="./assets/img/menu/set2.jpeg" alt="" />
-                <div class="menu-contents">
-                    <h3>Name : Set2</h3>
-                    <p>Price : <span>9000</span>MMK</p>
-                    <p>Coffee Sweety Hub</p>
+            <div class="flip-cards">
+                <div class="flip-card-inners">
 
-                    <p class="read-more-btn">Read More <i class="fas fa-arrow-right"></i></p>
-                    <p class="hidden">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    
+                    <div class="flip-card-fronts">
+                       <img src="./assets/img/menu/set2.jpeg" alt="set1" />
+                    </div>
+                    <div class="flip-card-backs pt-3">
+                        <div class="menu-contents">
+                            <h3>Name : Set1</h3>
+                            <p>Price : <span>9000</span>MMK</p>
+                            <p>Coffee Sweety Hub</p>
+                            <p class="para">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+                            </p>
+                        </div>
+                        
+                    </div>
+
                 </div>
             </div>
 
+            <div class="flip-cards">
+                <div class="flip-card-inners">
 
-            <div class="menu-boxs">
-                <img src="./assets/img/menu/set3.jpeg" alt="" />
-                <div class="menu-contents">
-                    <h3>Name : Set3</h3>
-                    <p>Price : <span>12000</span>MMK</p>
-                    <p>Coffee Sweety Hub</p>
+                    <div class="flip-card-fronts">
+                       <img src="./assets/img/menu/set3.jpeg" alt="set1" />
+                    </div>
+                    <div class="flip-card-backs pt-3">
+                        <div class="menu-contents">
+                            <h3>Name : Set1</h3>
+                            <p>Price : <span>9000</span>MMK</p>
+                            <p>Coffee Sweety Hub</p>
+                            <p class="para">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+                            </p>
+                        </div>
+                        
+                    </div>
 
-                    <p class="read-more-btn">Read More <i class="fas fa-arrow-right"></i></p>
-                    <p class="hidden">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    
                 </div>
             </div>
 
-            <div class="menu-boxs">
-                <img src="./assets/img/menu/set4.jpeg" alt="" />
-                <div class="menu-contents">
-                    <h3>Name : Set4</h3>
-                    <p>Price : <span>7800</span>MMK</p>
-                    <p>Coffee Sweety Hub</p>
+            <div class="flip-cards">
+                <div class="flip-card-inners">
 
-                    <p class="read-more-btn">Read More <i class="fas fa-arrow-right"></i></p>
-                    <p class="hidden">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    
+                    <div class="flip-card-fronts">
+                       <img src="./assets/img/menu/set4.jpeg" alt="set1" />
+                    </div>
+                    <div class="flip-card-backs pt-3">
+                        <div class="menu-contents">
+                            <h3>Name : Set4</h3>
+                            <p>Price : <span>9000</span>MMK</p>
+                            <p>Coffee Sweety Hub</p>
+                            <p class="para">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+                            </p>
+                        </div>
+                        
+                    </div>
+
                 </div>
             </div>
 
-            <div class="menu-boxs">
-                <img src="./assets/img/menu/set5.jpeg" alt="" />
-                <div class="menu-contents">
-                    <h3>Name : Set5</h3>
-                    <p>Price : <span>10000</span>MMK</p>
-                    <p>Coffee Sweety Hub</p>
+            <div class="flip-cards">
+                <div class="flip-card-inners">
 
-                    <p class="read-more-btn">Read More <i class="fas fa-arrow-right"></i></p>
-                     <p class="hidden">Praesent commodo cursus magna, vel scelerisque nisl consectetur. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                    
+                    <div class="flip-card-fronts">
+                       <img src="./assets/img/menu/set5.jpeg" alt="set1" />
+                    </div>
+                    <div class="flip-card-backs pt-3">
+                        <div class="menu-contents">
+                            <h3>Name : Set1</h3>
+                            <p>Price : <span>9000</span>MMK</p>
+                            <p>Coffee Sweety Hub</p>
+                            <p class="para">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+                            </p>
+                        </div>
+                        
+                    </div>
+
                 </div>
             </div>
 
-            <div class="menu-boxs">
-                <img src="./assets/img/menu/set6.jpeg" alt="" />
-                <div class="menu-contents">
-                    <h3>Name : Set6</h3>
-                    <p>Price : <span>9500</span>MMK</p>
-                    <p>Coffee Sweety Hub</p>
+            <div class="flip-cards">
+                <div class="flip-card-inners">
 
-                    <p class="read-more-btn">Read More <i class="fas fa-arrow-right"></i></p>
-                    <p class="hidden">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    
+                    <div class="flip-card-fronts">
+                       <img src="./assets/img/menu/set6.jpeg" alt="set1" />
+                    </div>
+                    <div class="flip-card-backs pt-3">
+                        <div class="menu-contents">
+                            <h3>Name : Set1</h3>
+                            <p>Price : <span>9000</span>MMK</p>
+                            <p>Coffee Sweety Hub</p>
+                            <p class="para">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+                            </p>
+                        </div>
+                        
+                    </div>
+
                 </div>
-            </div>
+            </div> -->
 
 
         </div>
@@ -382,23 +470,7 @@
     const getcakecontainer = document.querySelector('.cake-container');
     const getcoffeecontainer  = document.querySelector('.coffee-container');
 
-    document.addEventListener("DOMContentLoaded", function() {
-        var readMoreBtns = document.querySelectorAll(".read-more-btn");
-
-        readMoreBtns.forEach(function(btn) {
-            btn.addEventListener("click", function() {
-                var hiddenParagraph = this.nextElementSibling;
-
-                if (hiddenParagraph.classList.contains("hidden")) {
-                    hiddenParagraph.classList.remove("hidden");
-                    this.innerHTML = 'Cancel<i class="fas fa-arrow-right"></i>';
-                } else {
-                    hiddenParagraph.classList.add("hidden");
-                    this.innerHTML = 'Read More <i class="fas fa-arrow-right"></i>';
-                }
-            });
-        });
-    });
+    
 
 
     getall.addEventListener("click",function(){
@@ -442,7 +514,7 @@
 
                 const ingredients = [];
 
-                for(let x=1; x<=12; x++){
+                for(let x=1; x<=9;   x++){
                     // console.log(x);  // 1 to 20
                     // console.log(food[x].idMeal);
                     var getcakestring = JSON.stringify(food[x]);
@@ -519,16 +591,52 @@
                 <div class="menu-contents">
                     <h3>Name : Set6</h3>
                     <p>Price : <span>9500</span>MMK</p>
-                    <p>Coffee Sweety Hub</p>
-
-                    <p class="read-more-btn">Read More <i class="fas fa-arrow-right"></i></p>
-                    <p class="hidden">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    
+                    <p>Coffee Sweety Hub</p>                    
                 </div>
             </div>`;
                 }
             });
           })
+
+
+
+// Function to fetch and display the data
+async function fetchData() {
+  try {
+    const response = await fetch('setdatas.json');
+    const sets = await response.json();
+
+    sets.forEach(set => {
+        var createdivset = document.createElement('div');
+        createdivset.classList.add('flip-cards');
+        createdivset.innerHTML = `
+        <div class="flip-card-inners">
+
+            <div class="flip-card-fronts">
+                <img src="${set.url}" alt="set1" />
+            </div>
+            <div class="flip-card-backs pt-3">
+                <div class="menu-contents">
+                    <h3>Name : ${set.name}</h3>
+                    <p>Price : <span>${set.price}</span></p>
+                    <p>Coffee Sweety Hub</p>
+                    <p class="para">${set.text} 
+                    </p>
+                </div>
+            </div>
+        </div>
+        `;
+
+        getmenucontainer.appendChild(createdivset);
+    });
+  } catch (error) {
+    console.error('Error fetching data:', error);
+  }
+}
+
+// Call the function to fetch data
+fetchData();
+
           
 
 </script>
