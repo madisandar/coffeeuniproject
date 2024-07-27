@@ -239,6 +239,8 @@ section {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   left: 375px;
   bottom: -50px;
+
+  margin-bottom: 20px;
 }
 
 .card .section {
@@ -260,32 +262,42 @@ section {
   color: #292828;
 }
 
+/* start blockquote */
+
 .quote-container {
-  display: flex;
-  padding: 0 6%;
-  margin-top: 2rem;
+  margin: 20px 0;
+  padding: 10px;
   position: relative;
 }
 
-.blockquote-wrapper {
-  display: flex;
-  height: auto;
-  padding: 0 20px;
+
+.fa-quotes{
+  color: rgba(255,255,255,0.3);
+  font-size: 28px;
+
+  position: absolute;
+  top: 40px;
+}
+
+.fa-quote-left{
+  left: 0;
+}
+
+.fa-quote-right{
+  right: 0;
+}
+
+.testimonial{
+  line-height:  30px;
 }
 
 .blockquote {
-   position: relative;
+  margin: 20px 0;
    font-family: 'Poppins', sans-serif;
    font-weight: 800;
    color: #ffffff;
-   padding: 30px 0;
-   width: 100%;
-   max-width: 500px;
-   z-index: 1;
-   margin: 80px auto;
-   align-self: center;
-   border-top: solid 1px;
-   border-bottom: solid 1px;
+   text-align: center;
+   padding: 10px;
 }
 
 .blockquote h1 {
@@ -303,16 +315,28 @@ section {
   font-weight: 500;
   font-size: 15px;
 }
+.progress-bar{
+  width: 80%;
+  height: 4px;
+  background:#d2911c;
+  transform-origin: left;
 
-.blockquote:after {
-   position: absolute;
-   content: "“";
-   color: rgba(255, 255, 255, 1);
-   font-size: 10rem;
-   line-height: 0;
-   top: 18px;
-   /* right: 30px; */
+  animation-name: myincrement;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
+
+@keyframes myincrement{
+  0%{
+     transform: scaleX(0);
+  }
+
+  100%{
+      transform: scaleX(1);
+  }
+}
+/* blockquote end */
 
 .about .row {
   display: flex;

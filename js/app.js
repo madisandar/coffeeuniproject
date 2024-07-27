@@ -80,7 +80,67 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+// Start Testimonials Section
+const getblockquotetitle = document.querySelector('.blockquotetitle');
+const getblockquotecaption = document.querySelector('.blockquotecaption');
+const gettestimonial = document.querySelector('.testimonial');
 
+const testimonialdatas = [
+    {
+        text: "Life is too short for bad coffee",
+        name: "Steven Pressfield"
+    },
+
+    {
+      text: "Life begins after coffee",
+      name: "Louisa May Alcott"
+    },
+
+    {
+      text: "Coffee is a hug in a mug",
+      name: "Howard Schultz"
+    },
+
+    {
+      text:"Coffee is a language in itself.",
+      name:"Jackie Chan"
+    },
+
+    {
+      text:"Coffee smells like freshly ground heaven.",
+      name:"Jessi Lane Adams"
+    }
+
+];
+
+let idx = 0;
+
+function updatetestimonail(){
+    //  getcompanyname.textContent = testimonialdatas[idx].name;
+    //  getrole.textContent = testimonialdatas[idx].position;
+    //  gettestimonial.textContent = testimonialdatas[idx].text;
+      
+     const {text,name} = testimonialdatas[idx];
+
+    // console.log(name);
+    // console.log(position);
+    // console.log(text);
+
+     getblockquotetitle.textContent = text;
+     getblockquotecaption.textContent = name;
+
+     idx ++;
+
+     if(idx > testimonialdatas.length - 1){
+        idx = 0;
+     }
+
+
+}
+
+updatetestimonail();
+setInterval(updatetestimonail,5000);
+//End Testimonal
 
 // const getcoffeedatas = fetch("https://fake-coffee-api.vercel.app/api")
 //   .then((res) => res.json())
