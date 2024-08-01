@@ -7,18 +7,9 @@
     <style type="text/css">
         body{
             background: linear-gradient(to right,#623F2A, #000);
+            font-family: sans-serif;
         }
-        .back-btn{
-            font-size: 1.5rem;
-            background: linear-gradient(burlywood,#fff);
-            color: #000;
-
-            position: absolute;
-            right: 10px;
-            top: 10px;
-
-            padding: 10px;
-        }
+      
         .menu-container{
             width: auto;
             padding: 20px;
@@ -38,11 +29,34 @@
         .menu-card{
             display: flex;
             justify-content: space-between;
+
+            position: relative;
         }
 
         .menu-card h3{
             color: burlywood;
             font-size: 20px;
+        }
+
+        .menu-card .back-btn{
+            display: block;
+            text-decoration: none;
+
+            width: 120px;
+            height: 45px;
+            background: transparent;
+            border: 1px solid burlywood;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 20px;
+            
+            line-height: 50px;
+
+            /* padding: 10px; */
+
+            position: absolute;
+            left: 0;
+            top: -50px;
         }
 
         .menu-content{
@@ -92,7 +106,16 @@
             left: 10px;
         }
 
-        .menu-boxs-container,.cake-container,.coffee-container{
+
+        .menu-content button:nth-child(4):hover::after{
+            content: "Package";
+
+            position: absolute;
+            bottom: -20px;
+            left: 10px;
+        }
+
+        .set-boxs-container,.cake-container,.coffee-container,.package-container{
             top: 20px;
             padding: 10px;
             margin-left: 20px;
@@ -122,224 +145,233 @@
         }
 
         .menu-contents .para{
-            font-size: 16;
-            text-align: justify;
+            font-size: 16px;
+            text-align: center;
         }
         .hidden {
             display: none;
         }
 
-        .read-more-btn{
-            width: 120px;
-            margin-top: 20px;
-            background-color: burlywood;
-            font-size: 50px;
-            cursor: pointer;
-            padding: 7px 13px;
-        }
+      
 
-        .menu-boxs-container.active,.cake-container.active,.coffee-container.active{
+        .set-boxs-container.active,.cake-container.active,.coffee-container.active,.package-container.active{
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
             gap: 1.5rem;
         }
 
-                
-            .flip-cards{
-                width: 300px;
-                height: 300px;
-
-                perspective: 1000px;
-                cursor: pointer;
-            }
-
-            .flip-cards:hover{
-                margin-left: 35px;
-            }
+        .package-container{
+            margin-top: 30px;
+        }
 
 
-            .flip-card-inners{
-                width: 100%;
-                height: 100%;
-                text-align: center;
-                box-shadow: 10px 0 10px rgba(0,0,0,0.5);
+        .set-boxs,.coffee-boxs{
+            width: 290px;
+            height: 240px;
 
-                transform-style: preserve-3d;
+            padding: 10px;
+            overflow: hidden;
 
-                transform: rotateY(-5deg) scale(0.7);
+            margin: 20px 10px;
+        }
 
-                transition: transform  0.8s;
-            }
+        .package-boxs,.cake-boxs{
+            width: 300px;
+            height: 340px;
+            background: rgb(0,212,255);
+            
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            background-color: rgba(17, 25, 40, 0.25);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.125);  
+            padding: 30px 20px;  
+            filter: drop-shadow(0 30px 10px rgba(0,0,0,0.125));
 
-            .flip-cards:hover .flip-card-inners{
-                transform: rotateY(180deg);
-            }
+            margin: 20px 10px;
 
-            .flip-card-fronts,.flip-card-backs{
-                width: 100%;
-                height: 100%;
+        }
 
-                position: absolute;
-
-                -webkit-backface-visibility: hidden;
-                backface-visibility: hidden;
-            }
-
-            .flip-card-fronts img{
-                width: 380px;
-                height: 300px;
-
-                transform: rotate(120deg,-45deg);
-
-            } 
-
-            .flip-card-backs{
-                width: 300px;
-                height: 300px;
-                
-                background: linear-gradien(to right,#623F2A, #000);
-                transform: rotateY(180deg);
-                
-            }
+        
 
 
-
-        .coffee-boxs{
-            margin-top: 20px;
+        figure {
+            width: 100%;
+            height: 100%;
+            display: grid;
+            border-radius: 1rem;
+            overflow: hidden;
             cursor: pointer;
-            /* box-shadow: 1px 1px 1px rgb(0,0,0,0.2); */
-            border-radius: 30px;
+
+            position: relative;
+        }
+        figure > * {
+            width: 100%;
+            height: 100%;
+            grid-area: 1/1;
+            transition: .4s;
+        }
+
+
+        figure figcaption {
+            display: grid;
+            align-items: flex-start;
+            font-family: sans-serif;
+            font-weight: bold;
+            color: #fff;
+            padding: .75rem;
+            background: var(--c,#000);
+            clip-path: inset(0 var(--_i,100%) 0 0);
+            /* -webkit-mask:
+                linear-gradient(#000 0 0),
+                linear-gradient(#000 0 0); */
+            -webkit-mask-composite: xor;
+            -webkit-mask-clip: text, padding-box;
+            /* margin: -1px; */
+
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+figure:hover figcaption{
+  --_i: 0%;
+}
+
+figcaption  h3{
+    font-size: 1.9rem;
+    padding: 0;
+    margin: 0;
+    
+}
+
+figcaption p{
+    font-size: 1rem;
+    color: #623F2A;
+}
+
+figcaption button,.wrapper button{
+    width: 100px;
+    height: 50px;
+    margin: auto;
+    cursor: pointer;
+
+    padding: 5px 3px;
+    border-radius: 25px;
+}
+
+
+.price{
+    display: inline-block;
+    font-size: 1.8rem;
+}
+
+figure:hover img {
+  transform: scale(1.2);
+}
+@supports not (-webkit-mask-clip: text) {
+  figure figcaption {
+   -webkit-mask: none;
+   color: #fff;
+  }
+}
+
+     
+
+        .wrapper{
+            width: 100%;
+            height: 80%;
+            color: #fff;
+
+            text-align: center;
+
             padding: 10px;
         }
 
-        .cake-boxes img{
-            border-radius: 30px;
-        }
-        
-        .coffees{
-            text-align: center;
+        .wrapper h3{
+            font-size: 1.6rem;
+            margin-bottom: 5px;
         }
 
-        .coffees h1{
-            text-align: center;
+        .wrapper p{
+            font-size: 0.8rem;
             color: #fff;
-            margin: 20px;
-
         }
 
-        .coffee-boxs{
-                font-size: 40px;
-                color: #000;
-                height: 200px;
-                
-                 box-shadow: 0 2px 0 2px rgba(0,0,0,0.4);
-                /* padding: 30px 50px; */
-                margin: 20px;
-                position: relative;
 
-                /* overflow: hidden; */
+       
 
-                display: flex;
-                justify-content: center;
-                align-items: center;
+        .wrapper img{
+            width: 100%;
+            height: 75%;
+            border-radius: 10px;
+            /* border: 1px solid rgba(255,255,255,0.4); */
+            margin-bottom: 8px;
+            object-fit: cover;
         }
 
-        .coffee-image  img{
-            width: 50%;
-            height: 100%;
 
-            object-fit: cover;   
-            
-            position: absolute;
-            right: 0;
-            top: 0;
+.button-wrapper{
+    width: 180px;
+    height: 80px;
+    margin: auto;
+    margin-top: 27px;
+}
+.button-wrapper.cake{
+    margin-top: 0;
+}
+.addtocart{
+    width: 50%;
+    height: 50%;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 15px;
+  font-size: 1rem;  
+  letter-spacing: 2px;  
+  cursor: pointer;
 
-            /* transform: translateX(-50%); */
+  background: transparent;
+  color: rgba(0, 212, #623f2a, 0.7);
+  border: 1px solid #d2911c;
+  transition: all .3s ease;
+}
+
+.addtocart i{
+  color: #d2911c;
+}
+
+
+.addtocart:hover{
+  transform: scale(1.125);
+  color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 0.9);
+  transition: all .3s ease;  
+}
+      
+.wrapper-cake{
+            width: 100%;
+            height: 90%;
+
+            text-align: left;
         }
 
-        .coffee-image::after{
-              content: 'Mo';
-              font-family: 'Font Awesome 6 Free';
-              font-weight: 900; 
-              font-size: 2rem;
-              width: 50%;
-              /* background-color: steelblue; */
-              color: hsl(0, 0%, 100%);
-              font-size: 2rem;
-              text-align: center;
-
-              position: absolute;
-              left: 0;
-              top: 50%;
-            
-              z-index: 100;
-
-
-              transition: all  1s;
-
+        .wrapper-cake img{
+            width: 100%;
+            border-radius: 10px;
+            /* border: 1px solid rgba(255,255,255,0.4); */
+            margin-bottom: 8px;
+            object-fit: cover;
         }
-
 
       
-        
-        .coffee-content{
-              width: 50%;
 
-              position: absolute;
-              left: 0;
-              top: 0;
-
-            transform: translate(-100%,50%);
-            opacity: 0;
-            /* z-index: 100; */
-
-            transition: all  1s;
-
-        }
-
-        .coffee-content.show{
-            transform: translate(0%,50%);
-            
-            opacity: 1;
-        }
-
-        .coffee-content.show ~ .coffee-image::after{
-            opacity: 0;
-        }
-
-        
-
-        .coffee-content h3{
-            color: burlywood;
-            font-size: 2rem;
-        }
-
-        .coffee-content p{
-            color: #fff;
-            font-size: 1.2rem;
-        }
-
-        .coffee-content small{
-            display: block;
-            color: #fff;
-            font-size: 1.3rem;
-        }
-
-        .coffee-content .price{
-            color: burlywood;
-            font-size: 1.7rem;
-
-        }
-        
     </style>
 </head>
 <body>
     <!-- header section starts -->
 
 
-    <a href="index.html" class="back-btn">Back to home</a>
 
- 
+    <div class="icon"><i class="fas fa-shopping-cart cart-btn"></i></div>
 
     <div class="menu-container">
         <h5>Menus</h5>
@@ -347,140 +379,23 @@
 
         <div class="menu-card">
             <h3>Coffee & Cake</h3>
+            <a href="index.html" class="back-btn"><i class="fas fa-arrow-left fa-2x"></i></a>
 
             <div class="menu-content">
                 <button type="button" id="all"><i class="fas fa-allergies fa-2x"></i></button>
                 <button type="button" id="coffee"><i class="fas fa-coffee fa-2x"></i></button>
                 <button type="button" id="cake"><i class="fas fa-birthday-cake fa-2x"></i></button>
+                <button type="button" id="package"><i class="fas fa-user fa-2x"></i></button>
+
             </div>
         </div>
 
-        <div class="menu-boxs-container">
+        <div class="set-boxs-container">
 
-            <!-- <div class="flip-cards">
-                <div class="flip-card-inners">
-
-                    <div class="flip-card-fronts">
-                       <img src="./assets/img/menu/set1.jpg" alt="set1" />
-                    </div>
-                    <div class="flip-card-backs pt-3">
-                        <div class="menu-contents">
-                            <h3>Name : Set1</h3>
-                            <p>Price : <span>9000</span>MMK</p>
-                            <p>Coffee Sweety Hub</p>
-                            <p class="para">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-                            </p>
-                        </div>
-                        
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="flip-cards">
-                <div class="flip-card-inners">
-
-                    <div class="flip-card-fronts">
-                       <img src="./assets/img/menu/set2.jpeg" alt="set1" />
-                    </div>
-                    <div class="flip-card-backs pt-3">
-                        <div class="menu-contents">
-                            <h3>Name : Set1</h3>
-                            <p>Price : <span>9000</span>MMK</p>
-                            <p>Coffee Sweety Hub</p>
-                            <p class="para">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-                            </p>
-                        </div>
-                        
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="flip-cards">
-                <div class="flip-card-inners">
-
-                    <div class="flip-card-fronts">
-                       <img src="./assets/img/menu/set3.jpeg" alt="set1" />
-                    </div>
-                    <div class="flip-card-backs pt-3">
-                        <div class="menu-contents">
-                            <h3>Name : Set1</h3>
-                            <p>Price : <span>9000</span>MMK</p>
-                            <p>Coffee Sweety Hub</p>
-                            <p class="para">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-                            </p>
-                        </div>
-                        
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="flip-cards">
-                <div class="flip-card-inners">
-
-                    <div class="flip-card-fronts">
-                       <img src="./assets/img/menu/set4.jpeg" alt="set1" />
-                    </div>
-                    <div class="flip-card-backs pt-3">
-                        <div class="menu-contents">
-                            <h3>Name : Set4</h3>
-                            <p>Price : <span>9000</span>MMK</p>
-                            <p>Coffee Sweety Hub</p>
-                            <p class="para">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-                            </p>
-                        </div>
-                        
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="flip-cards">
-                <div class="flip-card-inners">
-
-                    <div class="flip-card-fronts">
-                       <img src="./assets/img/menu/set5.jpeg" alt="set1" />
-                    </div>
-                    <div class="flip-card-backs pt-3">
-                        <div class="menu-contents">
-                            <h3>Name : Set1</h3>
-                            <p>Price : <span>9000</span>MMK</p>
-                            <p>Coffee Sweety Hub</p>
-                            <p class="para">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-                            </p>
-                        </div>
-                        
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="flip-cards">
-                <div class="flip-card-inners">
-
-                    <div class="flip-card-fronts">
-                       <img src="./assets/img/menu/set6.jpeg" alt="set1" />
-                    </div>
-                    <div class="flip-card-backs pt-3">
-                        <div class="menu-contents">
-                            <h3>Name : Set1</h3>
-                            <p>Price : <span>9000</span>MMK</p>
-                            <p>Coffee Sweety Hub</p>
-                            <p class="para">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-                            </p>
-                        </div>
-                        
-                    </div>
-
-                </div>
-            </div> -->
-
-
+         
         </div>
 
-        <div id="overlay"></div>
+      
 
         <div class="coffee-container active">
             
@@ -518,6 +433,10 @@
            
         </div>
 
+        <div class="package-container">
+           
+        </div>
+
 
 
 <script src="./js/app.js" type="text/javascript"></script>
@@ -529,206 +448,189 @@
     const getall = document.getElementById('all');
     const getcake = document.getElementById('cake');
     const getcoffee = document.getElementById('coffee');
+    const getpackage = document.getElementById('package');
 
-    const getmenucontainer = document.querySelector('.menu-boxs-container');
+
+    const getsetcontainer = document.querySelector('.set-boxs-container');
     const getcakecontainer = document.querySelector('.cake-container');
     const getcoffeecontainer  = document.querySelector('.coffee-container');
-
+    const getpackagecontainer = document.querySelector('.package-container');
     
 
 
     getall.addEventListener("click",function(){
-        getmenucontainer.classList.add('active');
+        getsetcontainer.classList.add('active');
         getcakecontainer.classList.remove('active');
         getcoffeecontainer.classList.remove('active');
+        getpackagecontainer.classList.remove('active');
     });
 
     getcake.addEventListener("click",function(){
-        getmenucontainer.classList.remove('active');
+        getsetcontainer.classList.remove('active');
         getcakecontainer.classList.add('active');
         getcoffeecontainer.classList.remove('active');
+        getpackagecontainer.classList.remove('active');
     });
     
     getcoffee.addEventListener('click',function(){
-        getmenucontainer.classList.remove('active');
+        getsetcontainer.classList.remove('active');
         getcakecontainer.classList.remove('active');
         getcoffeecontainer.classList.add('active');
-    })
+        getpackagecontainer.classList.remove('active');
+    });
+
+    getpackage.addEventListener('click',function(){
+        getsetcontainer.classList.remove('active');
+        getcakecontainer.classList.remove('active');
+        getcoffeecontainer.classList.remove('active');
+        getpackagecontainer.classList.add('active');
+    });
 
 
-    // Start Cake Section
-
-    var url = `https://www.themealdb.com/api/json/v1/1/search.php?s=cake`;
-    // console.log(url);
-
-    fetch(url)
-                .then(response=>response.json())
-                .then(data=>{
-                    // console.log(data);
-                    // console.log(typeof data);
-
-                    // console.log(data.meals);
-
-                    foodsettertodom(data.meals);
-                }).catch(err=>console.log(err));
-
-
-
-            function foodsettertodom(food){
-                // console.log(food);
-
-                const ingredients = [];
-
-                for(let x=1; x<=9;   x++){
-                    // console.log(x);  // 1 to 20
-                    // console.log(food[x].idMeal);
-                    var getcakestring = JSON.stringify(food[x]);
-                    var cakeObject = JSON.parse(getcakestring);
-
-                    // console.log(getcakestring);
-                    // console.log(food[x].strMealThumb);
-                    var boxes = document.createElement('div');
-                    boxes.classList.add('cake-boxes');
-                    boxes.innerHTML = `
-                        <img src="${cakeObject.strMealThumb}" width="300px" height="200px" />
-                        <h1 style="font-size:20px;color:burlywood;">${cakeObject.strMeal}</h1>
-                        <p>Type : ${cakeObject.strCategory}</p>
-                        <p>${cakeObject.strArea} taste</p>
-                    `
-
-                    document.querySelector('.cake-container').appendChild(boxes);
-
-
-                }
-
-        }
-
-        // End Cake Section
             // console.log(ingredients);
 
-            // Start Coffee Section
 
-            var coffeeobjs = [
-                {name:"Espresso",text:"Lorem Ipsum is simply dummy text",price:"4000MMK",url:"./assets/img/menu/coffee1.jpeg"},
-                {name:"Americano",text:"Lorem Ipsum is simply dummy text",price:"3000MMK",url:"./assets/img/menu/coffee1.jpeg"},
-                {name:"Cappuccino",text:"Lorem Ipsum is simply dummy text",price:"5000MMK",url:"./assets/img/menu/coffee1.jpeg"},
-                {name:"Latte",text:"Lorem Ipsum is simply dummy text",price:"4500MMK",url:"./assets/img/menu/coffee1.jpeg"},
-                {name:"Mocha",text:"Lorem Ipsum is simply dummy text",price:"3000MMK",url:"./assets/img/menu/coffee1.jpeg"},
-                {name:"Ristretto",text:"Lorem Ipsum is simply dummy text",price:"3500MMK",url:"./assets/img/menu/coffee1.jpeg"},
-                {name:"Affogato",text:"Lorem Ipsum is simply dummy text",price:"5000MMK",url:"./assets/img/menu/coffee1.jpeg"},
-                {name:"Macchiato",text:"Lorem Ipsum is simply dummy text",price:"3500",url:"./assets/img/menu/coffee1.jpeg"},
-                {name:"BlackCoffee",text:"Lorem Ipsum is simply dummy text",price:"4000MMK",url:"./assets/img/menu/coffee1.jpeg"},
-            ];
-
-            // console.log(coffeeobjs);
-            coffeeobjs.map(function(coffeeobj){
-                // console.log(coffeeobj);
-
-                var creatediv = document.createElement('div');
-                creatediv.classList.add('coffee-boxs');
-
-                creatediv.innerHTML = `
-                    <div class="coffee-content">
-                        <h3>${coffeeobj.name}</h3>
-                        <p>${coffeeobj.text}</p>
-                        <small>Price : <span class="price">${coffeeobj.price}</span></small>
-                    </div>
-                    <a href="#" class="coffee-image"><img src="${coffeeobj.url}" /></a>
-                    
-                    
-                `;
-
-                getcoffeecontainer.appendChild(creatediv);
-
-            });
-
-            const coffeeboxs = document.querySelectorAll('.coffee-boxs');
-
-
-            coffeeboxs.forEach(function(container) {
-                const coffeeImage = container.querySelector('.coffee-image img');
-                 const coffeeContent = container.querySelector('.coffee-content');
-
-            coffeeImage.addEventListener('mouseenter', function() {
-                coffeeContent.classList.add('show');
-            });
-
-            coffeeImage.addEventListener('mouseleave', function() {
-                coffeeContent.classList.remove('show');
-            });
-    });
-            
-
-           
-
-            // End Coffee Section
-
-
-
-         var overlay = document.getElementById('overlay');
-          var getallmenuboxes = document.querySelectorAll('.menu-boxs');
-          getallmenuboxes.forEach(function(singlemenubox){
-             singlemenubox.addEventListener('click',function(e){
-                const style = window.getComputedStyle(e.target);
-                console.log(e.target);
-                if (style.opacity === '1') {
-                    
-                } else {
-                    console.log('Opacity is not 1');
-                    overlay.innerHTML = `
-
-            <div class="menu-boxs">
-                <img src="./assets/img/menu/set6.jpeg" alt="" />
-                <div class="menu-contents">
-                    <h3>Name : Set6</h3>
-                    <p>Price : <span>9500</span>MMK</p>
-                    <p>Coffee Sweety Hub</p>                    
-                </div>
-            </div>`;
-                }
-            });
-          })
-
-
-
-// Function to fetch and display the data
-async function fetchData() {
+// Start Set Section
+         
+async function fetchSet() {
   try {
     const response = await fetch('setdatas.json');
     const sets = await response.json();
 
     sets.forEach(set => {
         var createdivset = document.createElement('div');
-        createdivset.classList.add('flip-cards');
+        createdivset.classList.add('set-boxs');
+        console.log(set);
         createdivset.innerHTML = `
-        <div class="flip-card-inners">
-
-            <div class="flip-card-fronts">
-                <img src="${set.url}" alt="set1" />
-            </div>
-            <div class="flip-card-backs pt-3">
-                <div class="menu-contents">
-                    <h3>Name : ${set.name}</h3>
-                    <p>Price : <span>${set.price}</span></p>
-                    <p>Coffee Sweety Hub</p>
-                    <p class="para">${set.text} 
-                    </p>
-                </div>
-            </div>
-        </div>
+        <figure>
+            <img src="${set.url}" alt="">
+            <figcaption>
+                <h3>Name ${set.name}</h3>
+                <p>Price <span class="price">${set.price}</span></p>
+                <p>${set.text}</p>
+                <button><i class="fas fa-shopping-cart fa-2x"></i></button>
+            </figcaption>
+        </figure>
         `;
 
-        getmenucontainer.appendChild(createdivset);
+        getsetcontainer.appendChild(createdivset);
     });
   } catch (error) {
     console.error('Error fetching data:', error);
   }
 }
 
-// Call the function to fetch data
-fetchData();
+fetchSet();
 
-          
+// End Set Section
+
+ // Start Coffee Section
+ async function fetchCoffee() {
+                try {
+                    const response = await fetch('coffeedatas.json');
+                    const sets = await response.json();
+
+                    sets.forEach(set => {
+                        var createdivset = document.createElement('div');
+                        createdivset.classList.add('coffee-boxs');
+                        console.log(set);
+                        
+                        createdivset.innerHTML = `
+                        <figure>
+                            <img src="${set.url}" alt="">
+                            <figcaption>
+                                <h3>Name ${set.name}</h3>
+                                <p>Price <span class="price">${set.price}</span></p>
+                                <p>${set.text}</p>
+                                <button><i class="fas fa-shopping-cart fa-2x"></i></button>
+                            </figcaption>
+                        </figure>
+                        `;
+
+                getcoffeecontainer.appendChild(createdivset);
+            });
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+}
+
+// Call the function to fetch data
+fetchCoffee();
+
+// End Coffee Section
+
+// Start Cake Section
+
+async function fetchCake() {
+                try {
+                    const response = await fetch('cakedatas.json');
+                    const sets = await response.json();
+
+                    sets.forEach(set => {
+                        var createdivset = document.createElement('div');
+                        createdivset.classList.add('cake-boxs');
+                        console.log(set);
+                        
+                        createdivset.innerHTML = `
+                        <div class="wrapper-cake">
+                            <img src="${set.url}"></img>
+                            <h1>Cake</h1>
+                            <p>Price : 7000MMK</p>
+                        </div>
+                        <div class="button-wrapper cake"> 
+                             <button class="addtocart"><i class="fas fa-shopping-cart fa-2x"></i></button>
+                        </div>
+                          
+                        `;
+
+                getcakecontainer.appendChild(createdivset);
+            });
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+}
+
+// Call the function to fetch data
+fetchCake();
+
+// End Cake Section
+
+// Start Package Section
+         
+async function fetchPackage() {
+  try {
+    const response = await fetch('packagedatas.json');
+    const sets = await response.json();
+
+    sets.forEach(set => {
+        var createdivset = document.createElement('div');
+        createdivset.classList.add('package-boxs');
+
+        console.log(set);
+
+        createdivset.innerHTML = `
+        <div class="wrapper">
+            <img src="${set.url}" />
+            <h3>Name : ${set.name}</h3>
+            <p>Price <span class="price">${set.price}</span></p>
+            <p>${set.text}</p>
+        </div>
+        <div class="button-wrapper"> 
+          <button class="addtocart"><i class="fas fa-shopping-cart fa-2x"></i></button>
+        </div>  
+        `;
+
+        getpackagecontainer.appendChild(createdivset);
+    });
+  } catch (error) {
+    console.error('Error fetching data:', error);
+  }
+}
+
+fetchPackage();
+// End Package Section
+
+
 
 </script>
 

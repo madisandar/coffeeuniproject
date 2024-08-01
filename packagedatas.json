@@ -1,0 +1,57 @@
+[
+    {
+      "name": "Package1",
+      "text": "Lorem Ipsum is simply dummy text",
+      "price": "9000MMK",
+      "url": "./assets/img/menu/package2.png"
+    },
+    {
+      "name": "Package2",
+      "text": "Lorem Ipsum is simply dummy text",
+      "price": "10000MMK",
+      "url": "./assets/img/menu/package2.png"
+    },
+    {
+      "name": "Package3",
+      "text": "Lorem Ipsum is simply dummy text",
+      "price": "9500MMK",
+      "url": "./assets/img/menu/package2.png"
+    },
+    {
+      "name": "Package4",
+      "text": "Lorem Ipsum is simply dummy text",
+      "price": "10500MMK",
+      "url": "./assets/img/menu/package2.png"
+    },
+    {
+      "name": "Package5",
+      "text": "Lorem Ipsum is simply dummy text",
+      "price": "10000MMK",
+      "url": "./assets/img/menu/package2.png"
+    },
+    {
+      "name": "Package6",
+      "text": "Lorem Ipsum is simply dummy text",
+      "price": "9000MMK",
+      "url": "./assets/img/menu/package2.png"
+    },
+    {
+      "name": "Package7",
+      "text": "Lorem Ipsum is simply dummy text",
+      "price": "9500MMK",
+      "url": "./assets/img/menu/package2.png"
+    },
+    {
+      "name": "Package8",
+      "text": "Lorem Ipsum is simply dummy text",
+      "price": "10500MMK",
+      "url": "./assets/img/menu/package2.png"
+    },
+    {
+      "name": "Package9",
+      "text": "Lorem Ipsum is simply dummy text",
+      "price": "10000MMK",
+      "url": "./assets/img/menu/package2.png"
+    }
+  ]
+
