@@ -142,56 +142,6 @@ updatetestimonail();
 setInterval(updatetestimonail,5000);
 //End Testimonal
 
-// const getcoffeedatas = fetch("https://fake-coffee-api.vercel.app/api")
-//   .then((res) => res.json())
-//   .then((data) => data);
-
-// var url = "https://fake-coffee-api.vercel.app/api";
-
-
-// fetch(url)
-//         .then(response=>response.json())
-//         .then(datas=>{
-//                 coffeedatatodom(datas);
-//             }).
-//             catch(err=>console.log(err));
-    
-// function redirectToCart(){
-//   window.location.href = "addtocart.php";
-// }
-
-// function coffeedatatodom(coffees) {
-
-//   let count = 0;
-
-// coffees.forEach(function(coffee) {
-//     if (count >= 6) return; // Exit the function if count reaches 12
-    
-//     var getcoffeestring = JSON.stringify(coffee);
-//     var coffeeObject = JSON.parse(getcoffeestring);
-    
-//     var lis = document.createElement('li');
-//     lis.classList.add('box');
-//     console.log(coffeeObject);
-//     // Access the properties directly from the parsed object
-//     lis.innerHTML = `
-//       <img src="${coffeeObject.image_url}" width="400px" height="200px" />
-//       <h3>${coffeeObject.name}</h3>
-//       <p>Price <span class="price"> ${Math.round(coffeeObject.price * 200)} mmk</span></p>
-//       <p>Made by <span class="madeby">${coffeeObject.region}</span></p>
-//       <button type="button" class="btncarts" onclick="redirectToCart()">Add to cart <i class="fas fa-trash-alt icons"></i></button>
-//     `;
-    
-//     document.querySelector('.box-container').appendChild(lis);
-    
-//     count++; // Increment the counter
-
-    
-// });
-
-
-    
-// }
 
 var getallboxes = document.querySelectorAll('.menu .box-container .box');
 // console.log(getallboxes);
@@ -199,18 +149,19 @@ var getbox;
 
 
 
-window.onscroll = function(){
-  scrollanimate();
-};
 
 
-function scrollanimate(){
-  var getscrolltop = document.documentElement.scrollTop;
 
-  if(getscrolltop >= 800){
-    getallboxes.forEach(function(getbox){
-      // console.log(getbox);
-        getboxbox.classList.add('fade-in');  
-  });
-  }
-}
+
+window.addEventListener('scroll',()=>{
+  const getscrolly = window.scrollY;
+  console.log(getscrolly);
+
+  if(getscrolly >= 1100){
+      document.querySelector('.productimgcontainer').classList.add('fromlefts');
+      document.querySelector('.productcontent').classList.add('fromrights');
+
+  }else{
+    document.querySelector('.productimgcontainer').classList.remove('fromlefts');
+    document.querySelector('.productcontent').classList.remove('fromrights');  }
+});
