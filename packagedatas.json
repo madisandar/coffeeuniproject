@@ -3,7 +3,7 @@
       "name": "Package1",
       "text": "Lorem Ipsum is simply dummy text",
       "price": "9000MMK",
-      "url": "./assets/img/menu/package2.png"
+      "url": "./assets/img/menu/package1.jpg"
     },
     {
       "name": "Package2",
@@ -15,7 +15,7 @@
       "name": "Package3",
       "text": "Lorem Ipsum is simply dummy text",
       "price": "9500MMK",
-      "url": "./assets/img/menu/package2.png"
+      "url": "./assets/img/menu/package3.jpeg"
     },
     {
       "name": "Package4",

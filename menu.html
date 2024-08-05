@@ -56,7 +56,7 @@
 
             position: absolute;
             left: 0;
-            top: -50px;
+            top: -80px;
         }
 
         .menu-content{
@@ -64,6 +64,7 @@
             display: flex; 
             justify-content: space-between;
         }
+
         .menu-content button{
             background: burlywood;
            color: #fff;
@@ -165,7 +166,7 @@
         }
 
 
-        .set-boxs,.coffee-boxs{
+        .set-boxs,.coffee-boxs,.cake-boxs,.package-boxs{
             width: 290px;
             height: 240px;
 
@@ -175,7 +176,7 @@
             margin: 20px 10px;
         }
 
-        .package-boxs,.cake-boxs{
+        /* .package-boxs,.cake-boxs{
             width: 300px;
             height: 340px;
             background: rgb(0,212,255);
@@ -190,7 +191,7 @@
 
             margin: 20px 10px;
 
-        }
+        } */
 
         
 
@@ -316,9 +317,13 @@ figure:hover img {
     margin: auto;
     margin-top: 27px;
 }
+
+
 .button-wrapper.cake{
     margin-top: 0;
 }
+
+
 .addtocart{
     width: 50%;
     height: 50%;
@@ -335,6 +340,10 @@ figure:hover img {
   transition: all .3s ease;
 }
 
+.button-wrapper.cake .addtocart{
+    margin-top: -17px;
+}
+
 .addtocart i{
   color: #d2911c;
 }
@@ -347,31 +356,67 @@ figure:hover img {
   transition: all .3s ease;  
 }
       
-.wrapper-cake{
+    .wrapper-cake{
             width: 100%;
-            height: 90%;
+            height: 100%;
 
             text-align: left;
         }
 
         .wrapper-cake img{
             width: 100%;
+            height: 70%;
             border-radius: 10px;
             /* border: 1px solid rgba(255,255,255,0.4); */
             margin-bottom: 8px;
             object-fit: cover;
         }
 
+       
+
+        .icon{
+            width: 100px;
+            height: 60px;
+
+            position: absolute;
+            right: 0;
+            top: 20px;
+
+            cursor: pointer;
+        }
+
+        .icon .cart-btn{
+            color: burlywood;
+        }
+
+        .number{
+            width: 25px;
+            height: 25px;
+            background-color: red;
+            color: #fff;
+            border-radius: 50%;
+
+           
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+
+            margin-left: 30px;
+        }
       
 
     </style>
 </head>
 <body>
-    <!-- header section starts -->
+    <!-- header section starts  -->
 
 
 
-    <div class="icon"><i class="fas fa-shopping-cart cart-btn"></i></div>
+    <div class="icon" id="addtocart-btn">
+        <i class="fas fa-shopping-cart cart-btn fa-3x"></i>
+        <div class="number">0</div>
+    </div>
 
     <div class="menu-container">
         <h5>Menus</h5>
@@ -397,7 +442,7 @@ figure:hover img {
 
       
 
-        <div class="coffee-container active">
+        <div class="coffee-container active"> 
             
             <!-- <div class="coffee-boxs">
                 <img src="./assets/img/banner/bannercoffee1.jpg" />
@@ -406,7 +451,7 @@ figure:hover img {
                     <p>Loreum...</p>
                     <small>Price : <span class="price">5000MMK</span></small>
                 </div>
-            </div> -->
+            </div>  -->
 
             <!-- <div class="coffee-boxs">
                 <img src="" />
@@ -441,198 +486,123 @@ figure:hover img {
 
 <script src="./js/app.js" type="text/javascript"></script>
 <script src="./assets/libs/jquery.js" type="text/javascript"></script>
-<!-- <script src="./libs/jquery-ui-1.13.1/jquery-ui.min.js" type="text/javascript"></script> -->
-<script src="./addtocart.php" type="text/javascript"></script>
-<script type="text/javascript">
+ <script src="./libs/jquery-ui-1.13.1/jquery-ui.min.js" type="text/javascript"></script> -->
+ <script type="text/javascript"> 
+  document.addEventListener('DOMContentLoaded', function() {
+            const getall = document.getElementById('all');
+            const getcake = document.getElementById('cake');
+            const getcoffee = document.getElementById('coffee');
+            const getpackage = document.getElementById('package');
 
-    const getall = document.getElementById('all');
-    const getcake = document.getElementById('cake');
-    const getcoffee = document.getElementById('coffee');
-    const getpackage = document.getElementById('package');
+            const getsetcontainer = document.querySelector('.set-boxs-container');
+            const getcakecontainer = document.querySelector('.cake-container');
+            const getcoffeecontainer = document.querySelector('.coffee-container');
+            const getpackagecontainer = document.querySelector('.package-container');
 
+            const updateCartNumber = () => {
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const getnumber = document.querySelector('.number');
+                if (getnumber) {
+                    getnumber.textContent = cart.length;
+                }
+            };
 
-    const getsetcontainer = document.querySelector('.set-boxs-container');
-    const getcakecontainer = document.querySelector('.cake-container');
-    const getcoffeecontainer  = document.querySelector('.coffee-container');
-    const getpackagecontainer = document.querySelector('.package-container');
-    
-
-
-    getall.addEventListener("click",function(){
-        getsetcontainer.classList.add('active');
-        getcakecontainer.classList.remove('active');
-        getcoffeecontainer.classList.remove('active');
-        getpackagecontainer.classList.remove('active');
-    });
-
-    getcake.addEventListener("click",function(){
-        getsetcontainer.classList.remove('active');
-        getcakecontainer.classList.add('active');
-        getcoffeecontainer.classList.remove('active');
-        getpackagecontainer.classList.remove('active');
-    });
-    
-    getcoffee.addEventListener('click',function(){
-        getsetcontainer.classList.remove('active');
-        getcakecontainer.classList.remove('active');
-        getcoffeecontainer.classList.add('active');
-        getpackagecontainer.classList.remove('active');
-    });
-
-    getpackage.addEventListener('click',function(){
-        getsetcontainer.classList.remove('active');
-        getcakecontainer.classList.remove('active');
-        getcoffeecontainer.classList.remove('active');
-        getpackagecontainer.classList.add('active');
-    });
-
-
-            // console.log(ingredients);
-
-
-// Start Set Section
-         
-async function fetchSet() {
-  try {
-    const response = await fetch('setdatas.json');
-    const sets = await response.json();
-
-    sets.forEach(set => {
-        var createdivset = document.createElement('div');
-        createdivset.classList.add('set-boxs');
-        console.log(set);
-        createdivset.innerHTML = `
-        <figure>
-            <img src="${set.url}" alt="">
-            <figcaption>
-                <h3>Name ${set.name}</h3>
-                <p>Price <span class="price">${set.price}</span></p>
-                <p>${set.text}</p>
-                <button><i class="fas fa-shopping-cart fa-2x"></i></button>
-            </figcaption>
-        </figure>
-        `;
-
-        getsetcontainer.appendChild(createdivset);
-    });
-  } catch (error) {
-    console.error('Error fetching data:', error);
-  }
-}
-
-fetchSet();
-
-// End Set Section
-
- // Start Coffee Section
- async function fetchCoffee() {
-                try {
-                    const response = await fetch('coffeedatas.json');
-                    const sets = await response.json();
-
-                    sets.forEach(set => {
-                        var createdivset = document.createElement('div');
-                        createdivset.classList.add('coffee-boxs');
-                        console.log(set);
-                        
-                        createdivset.innerHTML = `
-                        <figure>
-                            <img src="${set.url}" alt="">
-                            <figcaption>
-                                <h3>Name ${set.name}</h3>
-                                <p>Price <span class="price">${set.price}</span></p>
-                                <p>${set.text}</p>
-                                <button><i class="fas fa-shopping-cart fa-2x"></i></button>
-                            </figcaption>
-                        </figure>
-                        `;
-
-                getcoffeecontainer.appendChild(createdivset);
+            getall.addEventListener("click", function() {
+                getsetcontainer.classList.add('active');
+                getcakecontainer.classList.remove('active');
+                getcoffeecontainer.classList.remove('active');
+                getpackagecontainer.classList.remove('active');
             });
-        } catch (error) {
-            console.error('Error fetching data:', error);
-        }
-}
 
-// Call the function to fetch data
-fetchCoffee();
-
-// End Coffee Section
-
-// Start Cake Section
-
-async function fetchCake() {
-                try {
-                    const response = await fetch('cakedatas.json');
-                    const sets = await response.json();
-
-                    sets.forEach(set => {
-                        var createdivset = document.createElement('div');
-                        createdivset.classList.add('cake-boxs');
-                        console.log(set);
-                        
-                        createdivset.innerHTML = `
-                        <div class="wrapper-cake">
-                            <img src="${set.url}"></img>
-                            <h1>Cake</h1>
-                            <p>Price : 7000MMK</p>
-                        </div>
-                        <div class="button-wrapper cake"> 
-                             <button class="addtocart"><i class="fas fa-shopping-cart fa-2x"></i></button>
-                        </div>
-                          
-                        `;
-
-                getcakecontainer.appendChild(createdivset);
+            getcake.addEventListener("click", function() {
+                getsetcontainer.classList.remove('active');
+                getcakecontainer.classList.add('active');
+                getcoffeecontainer.classList.remove('active');
+                getpackagecontainer.classList.remove('active');
             });
-        } catch (error) {
-            console.error('Error fetching data:', error);
-        }
-}
 
-// Call the function to fetch data
-fetchCake();
+            getcoffee.addEventListener('click', function() {
+                getsetcontainer.classList.remove('active');
+                getcakecontainer.classList.remove('active');
+                getcoffeecontainer.classList.add('active');
+                getpackagecontainer.classList.remove('active');
+            });
 
-// End Cake Section
+            getpackage.addEventListener('click', function() {
+                getsetcontainer.classList.remove('active');
+                getcakecontainer.classList.remove('active');
+                getcoffeecontainer.classList.remove('active');
+                getpackagecontainer.classList.add('active');
+            });
 
-// Start Package Section
-         
-async function fetchPackage() {
-  try {
-    const response = await fetch('packagedatas.json');
-    const sets = await response.json();
+            async function fetchItems(url, container, className) {
+                try {
+                    const response = await fetch(url);
+                    const items = await response.json();
+                    items.forEach(item => {
+                        const div = document.createElement('div');
+                        div.classList.add(className);
+                        div.innerHTML = `
+                            <figure>
+                                <img src="${item.url}" alt="${item.name}">
+                                <figcaption>
+                                    <h3>${item.name}</h3>
+                                    <p>Price: <span class="price">${item.price}</span></p>
+                                    <p>${item.text || ''}</p>
+                                    <button onclick="addToCart(this)" data-item='${JSON.stringify({name: item.name, price: item.price, imageUrl: item.url})}'>
+                                        <i class="fas fa-shopping-cart fa-2x"></i>
+                                    </button>
+                                </figcaption>
+                            </figure>
+                        `;
+                        container.appendChild(div);
+                    });
+                } catch (error) {
+                    console.error('Error fetching data:', error);
+                }
+            }
 
-    sets.forEach(set => {
-        var createdivset = document.createElement('div');
-        createdivset.classList.add('package-boxs');
+            fetchItems('setdatas.json', getsetcontainer, 'set-boxs');
+            fetchItems('coffeedatas.json', getcoffeecontainer, 'coffee-boxs');
+            fetchItems('cakedatas.json', getcakecontainer, 'cake-boxs');
+            fetchItems('packagedatas.json', getpackagecontainer, 'package-boxs');
 
-        console.log(set);
+            window.addToCart = function(button) {
+                button.disabled = true;
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const itemData = JSON.parse(button.dataset.item || '{}');
+                if (itemData) {
+                    cart.push(itemData);
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                    updateCartNumber();
+                }
+            };
 
-        createdivset.innerHTML = `
-        <div class="wrapper">
-            <img src="${set.url}" />
-            <h3>Name : ${set.name}</h3>
-            <p>Price <span class="price">${set.price}</span></p>
-            <p>${set.text}</p>
-        </div>
-        <div class="button-wrapper"> 
-          <button class="addtocart"><i class="fas fa-shopping-cart fa-2x"></i></button>
-        </div>  
-        `;
+            const getaddtocart = document.getElementById('addtocart-btn');
+            getaddtocart.addEventListener('click', function() {
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                if (cart.length === 0) {
+                    alert("You have added nothing to the cart!");
+                } else {
+                    const items = cart.length;
+                    const eventDataArray = cart.map(item => item);
+                    const eventDataQuery = encodeURIComponent(JSON.stringify(eventDataArray));
+                    window.location.href = `addtocart.html?items=${encodeURIComponent(items)}&eventData=${eventDataQuery}`;
+                }
+            });
 
-        getpackagecontainer.appendChild(createdivset);
-    });
-  } catch (error) {
-    console.error('Error fetching data:', error);
-  }
-}
-
-fetchPackage();
-// End Package Section
-
-
-
-</script>
+            updateCartNumber();
+        });
+ </script>
 
 </body>
-</html>
+</html>  
+
+
+
+
+
+
+
+
+

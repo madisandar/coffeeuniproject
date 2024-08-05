@@ -3,7 +3,7 @@
         "name": "Espresso",
         "text": "Lorem Ipsum is simply dummy text",
         "price": "4000MMK",
-        "url": "./assets/img/menu/coffee2.jpg"
+        "url": "./assets/img/menu/coffee1.jpeg"
       },
       {
         "name": "Americano",
@@ -15,43 +15,43 @@
         "name": "Cappuccino",
         "text": "Lorem Ipsum is simply dummy text",
         "price": "5000MMK",
-        "url": "./assets/img/menu/coffee2.jpg"
+        "url": "./assets/img/menu/coffee3.jpeg"
       },
       {
         "name": "Latte",
         "text": "Lorem Ipsum is simply dummy text",
         "price": "4500MMK",
-        "url": "./assets/img/menu/coffee2.jpg"
+        "url": "./assets/img/menu/coffee4.jpeg"
       },
       {
         "name": "Mocha",
         "text": "Lorem Ipsum is simply dummy text",
         "price": "3000MMK",
-        "url": "./assets/img/menu/coffee2.jpg"
+        "url": "./assets/img/menu/coffee5.jpeg"
       },
       {
         "name": "Ristretto",
         "text": "Lorem Ipsum is simply dummy text",
         "price": "3500MMK",
-        "url": "./assets/img/menu/coffee2.jpg"
+        "url": "./assets/img/menu/coffee6.jpeg"
       },
       {
         "name": "Affogato",
         "text": "Lorem Ipsum is simply dummy text",
         "price": "5000MMK",
-        "url": "./assets/img/menu/coffee2.jpg"
+        "url": "./assets/img/menu/coffee7.jpeg"
       },
       {
         "name": "Macchiato",
         "text": "Lorem Ipsum is simply dummy text",
         "price": "3500MMK",
-        "url": "./assets/img/menu/coffee2.jpg"
+        "url": "./assets/img/menu/coffee8.jpeg"
       },
       {
         "name": "BlackCoffee",
         "text": "Lorem Ipsum is simply dummy text",
         "price": "4000MMK",
-        "url": "./assets/img/menu/coffee2.jpg"
+        "url": "./assets/img/menu/coffee9.jpeg"
       }
     ]
   

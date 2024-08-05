@@ -1,89 +1,89 @@
 [
     {
-      "name": "EggBreast",
+      "name": "Tiramisut",
       "text": "Lorem Ipsum is simply dummy text",
       "price": "4000MMK",
-      "url": "./assets/img/menu/cake3.jpeg"
+      "url": "./assets/img/menu/cake1.jpg"
     },
     
     {
-        "name": "EggBreast",
+        "name": "Coffee and Walnut Cake",
         "text": "Lorem Ipsum is simply dummy text",
-        "price": "4000MMK",
-        "url": "./assets/img/menu/cake3.jpeg"
+        "price": "4500MMK",
+        "url": "./assets/img/menu/cake2.jpeg"
       },
       
       {
-            "name": "EggBreast",
+            "name": "Mocha Cake",
             "text": "Lorem Ipsum is simply dummy text",
-            "price": "4000MMK",
+            "price": "4500MMK",
             "url": "./assets/img/menu/cake3.jpeg"
           },
   
           {
-            "name": "EggBreast",
+            "name": "Espresso Cheesecake",
             "text": "Lorem Ipsum is simply dummy text",
             "price": "4000MMK",
-            "url": "./assets/img/menu/cake3.jpeg"
+            "url": "./assets/img/menu/cake4.jpeg"
           },
    
           {
-            "name": "EggBreast",
+            "name": "Caramel Macchiato Cake",
             "text": "Lorem Ipsum is simply dummy text",
-            "price": "4000MMK",
-            "url": "./assets/img/menu/cake3.jpeg"
+            "price": "4500MMK",
+            "url": "./assets/img/menu/cake5.jpeg"
           },
   
           {
-            "name": "EggBreast",
+            "name": "Cinnamon Coffee Cake",
             "text": "Lorem Ipsum is simply dummy text",
-            "price": "4000MMK",
-            "url": "./assets/img/menu/cake3.jpeg"
+            "price": "5000MMK",
+            "url": "./assets/img/menu/cake6.jpeg"
           },
     
           {
-            "name": "EggBreast",
+            "name": "Almond Biscotti Cake",
             "text": "Lorem Ipsum is simply dummy text",
-            "price": "4000MMK",
-            "url": "./assets/img/menu/cake3.jpeg"
+            "price": "4500MMK",
+            "url": "./assets/img/menu/cake7.jpg"
           },
     
           {
-            "name": "EggBreast",
+            "name": "Chocolate Espresso Cake",
             "text": "Lorem Ipsum is simply dummy text",
             "price": "4000MMK",
-            "url": "./assets/img/menu/cake3.jpeg"
+            "url": "./assets/img/menu/cake8.jpeg"
           },
    
           {
-            "name": "EggBreast",
+            "name": "Hazelnut Coffee Cake",
             "text": "Lorem Ipsum is simply dummy text",
-            "price": "4000MMK",
-            "url": "./assets/img/menu/cake3.jpeg"
+            "price": "5000MMK",
+            "url": "./assets/img/menu/cake9.jpeg"
           },
 
 
     {
-        "name": "EggBreast",
+        "name": "Vanilla Latte Cake",
         "text": "Lorem Ipsum is simply dummy text",
-        "price": "4000MMK",
-        "url": "./assets/img/menu/cake3.jpeg"
+        "price": "4500MMK",
+        "url": "./assets/img/menu/cake10.jpeg"
       },
 
 
     {
-        "name": "EggBreast",
+        "name": "Irish Coffee Cake",
         "text": "Lorem Ipsum is simply dummy text",
         "price": "4000MMK",
-        "url": "./assets/img/menu/cake3.jpeg"
+        "url": "./assets/img/menu/cake11.jpeg"
       },
 
 
     {
-        "name": "EggBreast",
+        "name": "Chocolate Chip Coffee Cake",
         "text": "Lorem Ipsum is simply dummy text",
-        "price": "4000MMK",
-        "url": "./assets/img/menu/cake3.jpeg"
+        "price": "5000MMK",
+        "url": "./assets/img/menu/cake12.jpeg"
       }
   ]
 

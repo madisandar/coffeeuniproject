@@ -1,5 +1,203 @@
-<?php
 
-echo "hay";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add to Cart</title>
+    <style type="text/css">
+       
+h1 {
+    text-align: center;
+}
+.back-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px;
+    text-decoration: none;
+    background-color: steelblue;
+    color: #fff;
+}
+#cart-info {
+    margin: 20px;
 
-?>
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 1.5rem;
+
+}
+
+#cart-info p{
+    text-align: center;
+    font-size: 1.3rem;
+
+    position: absolute;
+    left: 46%;
+    top: 50px;
+}
+
+.cart-item {
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.cart-item img {
+    width: 50%; /* Adjust as needed */
+    height: auto;
+    display: block;
+    margin-right: 10px;
+}
+.cart-item hr {
+    margin: 10px 0;
+}
+#checkout-btn {
+    position: absolute;
+    left: 50px;
+    top: 25px;
+
+    background-color: steelblue;
+    color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.remove-btn{
+    margin-top: 120px;
+    background-color :steelblue;
+    color: #fff;
+    padding: 7px 10px;
+    cursor: pointer;
+    border: none;
+}
+    </style>
+</head>
+<body>
+    <h1>Add to Cart</h1>
+    <div id="cart-info"></div>
+
+    <a href="menu.html" class="back-btn">Back</a>
+    <button type="button" id="checkout-btn">Checkout</button>
+
+    <script type="text/javascript">
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                items: params.get('items'),
+                eventData: params.get('eventData')
+            };
+        }
+
+        function parseEventData(eventData) {
+            try {
+                return JSON.parse(decodeURIComponent(eventData)) || [];
+            } catch (e) {
+                console.error('Failed to parse event data:', e);
+                return [];
+            }
+        }
+
+        function updateCartInfo(cartData) {
+            const cartInfo = document.getElementById('cart-info');
+            cartInfo.innerHTML = ''; // Clear existing content
+
+            if (!cartData.length) {
+                cartInfo.innerHTML = '<p>No items in the cart.</p>';
+                return;
+            }
+
+            cartData.forEach((data, index) => {
+                const eventData = data.name || 'No event data';
+                const parentContent = data.price || 'No content available';
+                const imageUrl = data.imageUrl || ''; // Display image URL if available
+
+                const div = document.createElement('div');
+                div.classList.add('cart-item');
+                div.innerHTML = `
+                    ${imageUrl ? `<img src="${imageUrl}" alt="Item Image">` : ''}
+                    <div>
+                        <strong>Name: </strong> ${eventData} <br>
+                        <strong>Price: </strong> ${parentContent}
+                    </div>
+                    <button class='remove-btn' data-index='${index}'>Remove</button>
+                    <hr>
+                `;
+                cartInfo.appendChild(div);
+            });
+
+            // Display total number of items
+            const totalItems = document.createElement('p');
+            totalItems.textContent = `Total items: ${cartData.length}`;
+            cartInfo.appendChild(totalItems);
+        }
+
+        function updateLocalStorage(cartData) {
+            localStorage.setItem('cart', JSON.stringify(cartData));
+        }
+
+        function clearLocalStorage() {
+            localStorage.removeItem('cart');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const { items, eventData } = getQueryParams();
+            let cartData = parseEventData(eventData);
+
+            // If cartData is empty and no data in localStorage, reset the cart
+            if (!cartData.length) {
+                cartData = JSON.parse(localStorage.getItem('cart')) || [];
+            }
+
+            updateCartInfo(cartData);
+
+            // Add event listener to remove buttons
+            document.getElementById('cart-info').addEventListener('click', function(event) {
+                if (event.target.classList.contains('remove-btn')) {
+                    const index = event.target.getAttribute('data-index');
+                    cartData.splice(index, 1); // Remove item from array
+                    updateCartInfo(cartData);
+
+                    // Update localStorage
+                    updateLocalStorage(cartData);
+                }
+            });
+        });
+
+        document.getElementById('checkout-btn').addEventListener('click', function() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            if (cart.length === 0) {
+                alert("Your cart is empty!");
+                return;
+            }
+
+            // Calculate the total price
+            let totalPrice = 0;
+            cart.forEach(item => {
+                const price = parseFloat(item.price) || 0; // Ensure price is a number
+                totalPrice += price;
+            });
+
+            // Format total price to 2 decimal places
+            const formattedTotalPrice = totalPrice.toFixed(2);
+
+            // Display the total price to the user
+            window.alert(`Your total is ${formattedTotalPrice} MMK. Thank you for your purchase!`);
+
+            // Clear the cart
+            clearLocalStorage();
+            document.getElementById('cart-info').innerHTML = '<p>You successfully bought it!!!</p>';
+        });
+    </script>
+</body>
+</html>
+
